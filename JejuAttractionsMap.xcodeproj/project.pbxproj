@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21565CF696659F6307739E3E /* Pods_JejuAttractionsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
 		ABA2E35729A2700000965558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.release.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.release.xcconfig"; sourceTree = "<group>"; };
+		5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.debug.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.debug.xcconfig"; sourceTree = "<group>"; };
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2E35229A2700000965558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2E35429A2700000965558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21565CF696659F6307739E3E /* Pods_JejuAttractionsMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F20AA935CFDEDE15E9E314D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49DC444C559602C942256F35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */,
+				180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ABA2E34629A2700000965558 = {
 			isa = PBXGroup;
 			children = (
 				ABA2E35129A2700000965558 /* JejuAttractionsMap */,
 				ABA2E35029A2700000965558 /* Products */,
+				49DC444C559602C942256F35 /* Pods */,
+				1F20AA935CFDEDE15E9E314D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABA2E36329A2700100965558 /* Build configuration list for PBXNativeTarget "JejuAttractionsMap" */;
 			buildPhases = (
+				D8A74AFC3405B8933569D9BF /* [CP] Check Pods Manifest.lock */,
 				ABA2E34B29A2700000965558 /* Sources */,
 				ABA2E34C29A2700000965558 /* Frameworks */,
 				ABA2E34D29A2700000965558 /* Resources */,
+				53ADC6842273BB129DCA2886 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -103,7 +130,7 @@
 				};
 			};
 			buildConfigurationList = ABA2E34A29A2700000965558 /* Build configuration list for PBXProject "JejuAttractionsMap" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53ADC6842273BB129DCA2886 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8A74AFC3405B8933569D9BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JejuAttractionsMap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ABA2E34B29A2700000965558 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		ABA2E36429A2700100965558 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,14 +372,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.namegeon.JejuAttractionsMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		ABA2E36529A2700100965558 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,9 +404,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.namegeon.JejuAttractionsMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
