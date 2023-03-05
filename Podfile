@@ -4,7 +4,16 @@
 target 'JejuAttractionsMap' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for JejuAttractionsMap
   pod 'NMapsMap'
+  pod 'XMLCoder'
+end
+
+target 'JejuAttractionsMapTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for JejuAttractionsMap
+  pod 'XMLCoder'
 end

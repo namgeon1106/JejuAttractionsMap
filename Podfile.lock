@@ -2,19 +2,23 @@ PODS:
   - NMapsGeometry (1.0.1)
   - NMapsMap (3.16.1):
     - NMapsGeometry
+  - XMLCoder (0.14.0)
 
 DEPENDENCIES:
   - NMapsMap
+  - XMLCoder
 
 SPEC REPOS:
   trunk:
     - NMapsGeometry
     - NMapsMap
+    - XMLCoder
 
 SPEC CHECKSUMS:
   NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
   NMapsMap: 926c3a303d381a24bec8da3cd6e198f50af93ae9
+  XMLCoder: 0199b725702f32aa3190a88ea2f6fb4847bfe1d1
 
-PODFILE CHECKSUM: 7bc1a97326ad1417091bccb15dbd55241f7f6e8d
+PODFILE CHECKSUM: 60a7a6113601b341bef739278c2b5ffa428918df
 
 COCOAPODS: 1.11.3

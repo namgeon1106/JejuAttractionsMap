@@ -8,15 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		21565CF696659F6307739E3E /* Pods_JejuAttractionsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */; };
+		58C38CEEFBD4705128F95DA1 /* Pods_JejuAttractionsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
 		ABA2E35729A2700000965558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* ViewController.swift */; };
 		ABA2E35A29A2700000965558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35829A2700000965558 /* Main.storyboard */; };
 		ABA2E35C29A2700100965558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35B29A2700100965558 /* Assets.xcassets */; };
 		ABA2E35F29A2700100965558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */; };
+		ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ABD9B47D29B4BEEF00A8FED0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABA2E34729A2700000965558 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABA2E34E29A2700000965558;
+			remoteInfo = JejuAttractionsMap;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		165C95D4CB7B831C012FED15 /* Pods-JejuAttractionsMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMapTests.debug.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMapTests/Pods-JejuAttractionsMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.release.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.release.xcconfig"; sourceTree = "<group>"; };
 		5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.debug.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -28,6 +41,10 @@
 		ABA2E35B29A2700100965558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA2E35E29A2700100965558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA2E36029A2700100965558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JejuAttractionsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuAttractionsMapTests.swift; sourceTree = "<group>"; };
+		C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60F06F53F0DEBDF49246679 /* Pods-JejuAttractionsMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMapTests.release.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMapTests/Pods-JejuAttractionsMapTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +56,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABD9B47629B4BEEF00A8FED0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C38CEEFBD4705128F95DA1 /* Pods_JejuAttractionsMapTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */,
+				C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -55,8 +81,9 @@
 			children = (
 				60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */,
 				180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */,
+				165C95D4CB7B831C012FED15 /* Pods-JejuAttractionsMapTests.debug.xcconfig */,
+				D60F06F53F0DEBDF49246679 /* Pods-JejuAttractionsMapTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -64,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA2E35129A2700000965558 /* JejuAttractionsMap */,
+				ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */,
 				ABA2E35029A2700000965558 /* Products */,
 				49DC444C559602C942256F35 /* Pods */,
 				1F20AA935CFDEDE15E9E314D /* Frameworks */,
@@ -74,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */,
+				ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +119,14 @@
 				ABA2E36029A2700100965558 /* Info.plist */,
 			);
 			path = JejuAttractionsMap;
+			sourceTree = "<group>";
+		};
+		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */,
+			);
+			path = JejuAttractionsMapTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +151,26 @@
 			productReference = ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */;
 			productType = "com.apple.product-type.application";
 		};
+		ABD9B47829B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD9B48129B4BEEF00A8FED0 /* Build configuration list for PBXNativeTarget "JejuAttractionsMapTests" */;
+			buildPhases = (
+				366E8AB61FAAB68BEDE88C65 /* [CP] Check Pods Manifest.lock */,
+				ABD9B47529B4BEEF00A8FED0 /* Sources */,
+				ABD9B47629B4BEEF00A8FED0 /* Frameworks */,
+				ABD9B47729B4BEEF00A8FED0 /* Resources */,
+				F103F0CE96F8D06E0EBDB9F4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD9B47E29B4BEEF00A8FED0 /* PBXTargetDependency */,
+			);
+			name = JejuAttractionsMapTests;
+			productName = JejuAttractionsMapTests;
+			productReference = ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,6 +183,10 @@
 				TargetAttributes = {
 					ABA2E34E29A2700000965558 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					ABD9B47829B4BEEF00A8FED0 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = ABA2E34E29A2700000965558;
 					};
 				};
 			};
@@ -143,6 +204,7 @@
 			projectRoot = "";
 			targets = (
 				ABA2E34E29A2700000965558 /* JejuAttractionsMap */,
+				ABD9B47829B4BEEF00A8FED0 /* JejuAttractionsMapTests */,
 			);
 		};
 /* End PBXProject section */
@@ -158,9 +220,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABD9B47729B4BEEF00A8FED0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		366E8AB61FAAB68BEDE88C65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JejuAttractionsMapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		53ADC6842273BB129DCA2886 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,6 +291,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F103F0CE96F8D06E0EBDB9F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JejuAttractionsMapTests/Pods-JejuAttractionsMapTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JejuAttractionsMapTests/Pods-JejuAttractionsMapTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JejuAttractionsMapTests/Pods-JejuAttractionsMapTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -213,7 +321,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABD9B47529B4BEEF00A8FED0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABD9B47E29B4BEEF00A8FED0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABA2E34E29A2700000965558 /* JejuAttractionsMap */;
+			targetProxy = ABD9B47D29B4BEEF00A8FED0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ABA2E35829A2700000965558 /* Main.storyboard */ = {
@@ -413,6 +537,44 @@
 			};
 			name = Release;
 		};
+		ABD9B47F29B4BEEF00A8FED0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 165C95D4CB7B831C012FED15 /* Pods-JejuAttractionsMapTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJ396FQTK4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.namegeon.JejuAttractionsMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JejuAttractionsMap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JejuAttractionsMap";
+			};
+			name = Debug;
+		};
+		ABD9B48029B4BEEF00A8FED0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D60F06F53F0DEBDF49246679 /* Pods-JejuAttractionsMapTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NJ396FQTK4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.namegeon.JejuAttractionsMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JejuAttractionsMap.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JejuAttractionsMap";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,6 +592,15 @@
 			buildConfigurations = (
 				ABA2E36429A2700100965558 /* Debug */,
 				ABA2E36529A2700100965558 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD9B48129B4BEEF00A8FED0 /* Build configuration list for PBXNativeTarget "JejuAttractionsMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD9B47F29B4BEEF00A8FED0 /* Debug */,
+				ABD9B48029B4BEEF00A8FED0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
