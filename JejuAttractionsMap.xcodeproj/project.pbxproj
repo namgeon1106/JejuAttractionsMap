@@ -21,6 +21,7 @@
 		ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669E29B6358600693C10 /* RequestExceededError.xml */; };
 		ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */; };
 		ABA766A529B6360300693C10 /* UnknownError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A429B6360300693C10 /* UnknownError.xml */; };
+		ABA766A829B6364A00693C10 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766A729B6364A00693C10 /* Data+.swift */; };
 		ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		ABA7669E29B6358600693C10 /* RequestExceededError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RequestExceededError.xml; sourceTree = "<group>"; };
 		ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DeadlineExpiredError.xml; sourceTree = "<group>"; };
 		ABA766A429B6360300693C10 /* UnknownError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UnknownError.xml; sourceTree = "<group>"; };
+		ABA766A729B6364A00693C10 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JejuAttractionsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuAttractionsMapTests.swift; sourceTree = "<group>"; };
 		C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 		ABA7669629B633FF00693C10 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				ABA766A629B6363D00693C10 /* Extensions */,
 				ABA7669729B6340D00693C10 /* FetchAttractions */,
 			);
 			path = Responses;
@@ -160,6 +163,14 @@
 				ABA766A429B6360300693C10 /* UnknownError.xml */,
 			);
 			path = FetchAttractions;
+			sourceTree = "<group>";
+		};
+		ABA766A629B6363D00693C10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABA766A729B6364A00693C10 /* Data+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
@@ -374,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */,
+				ABA766A829B6364A00693C10 /* Data+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
