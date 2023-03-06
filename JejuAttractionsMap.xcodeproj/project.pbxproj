@@ -22,6 +22,7 @@
 		ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */; };
 		ABA766A529B6360300693C10 /* UnknownError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A429B6360300693C10 /* UnknownError.xml */; };
 		ABA766A829B6364A00693C10 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766A729B6364A00693C10 /* Data+.swift */; };
+		ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766AB29B63CCE00693C10 /* Attraction.swift */; };
 		ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DeadlineExpiredError.xml; sourceTree = "<group>"; };
 		ABA766A429B6360300693C10 /* UnknownError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UnknownError.xml; sourceTree = "<group>"; };
 		ABA766A729B6364A00693C10 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
+		ABA766AB29B63CCE00693C10 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JejuAttractionsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuAttractionsMapTests.swift; sourceTree = "<group>"; };
 		C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 		ABA2E35129A2700000965558 /* JejuAttractionsMap */ = {
 			isa = PBXGroup;
 			children = (
+				ABA766AA29B63CC000693C10 /* Models */,
 				ABA2E35229A2700000965558 /* AppDelegate.swift */,
 				ABA2E35429A2700000965558 /* SceneDelegate.swift */,
 				ABA2E35629A2700000965558 /* ViewController.swift */,
@@ -171,6 +174,14 @@
 				ABA766A729B6364A00693C10 /* Data+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABA766AA29B63CC000693C10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABA766AB29B63CCE00693C10 /* Attraction.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
@@ -374,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */,
 				ABA2E35729A2700000965558 /* ViewController.swift in Sources */,
 				ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */,
 				ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */,
