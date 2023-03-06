@@ -114,11 +114,19 @@
 				ABA2E35429A2700000965558 /* SceneDelegate.swift */,
 				ABA2E35629A2700000965558 /* ViewController.swift */,
 				ABA2E35829A2700000965558 /* Main.storyboard */,
+				ABA7666629B5B0D700693C10 /* Container */,
+			);
+			path = JejuAttractionsMap;
+			sourceTree = "<group>";
+		};
+		ABA7666629B5B0D700693C10 /* Container */ = {
+			isa = PBXGroup;
+			children = (
 				ABA2E35B29A2700100965558 /* Assets.xcassets */,
 				ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */,
 				ABA2E36029A2700100965558 /* Info.plist */,
 			);
-			path = JejuAttractionsMap;
+			name = Container;
 			sourceTree = "<group>";
 		};
 		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
