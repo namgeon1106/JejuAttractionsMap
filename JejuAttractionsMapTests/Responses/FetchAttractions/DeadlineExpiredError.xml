@@ -1,0 +1,7 @@
+<OpenAPI_ServiceResponse>
+    <cmmMsgHeader>
+        <errMsg>SERVICE ERROR</errMsg>
+        <returnAuthMsg>DEADLINE_HAS_EXPIRED_ERROR</returnAuthMsg>
+        <returnReasonCode>31</returnReasonCode>
+    </cmmMsgHeader>
+</OpenAPI_ServiceResponse>

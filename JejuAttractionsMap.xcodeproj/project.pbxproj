@@ -15,6 +15,12 @@
 		ABA2E35A29A2700000965558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35829A2700000965558 /* Main.storyboard */; };
 		ABA2E35C29A2700100965558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35B29A2700100965558 /* Assets.xcassets */; };
 		ABA2E35F29A2700100965558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */; };
+		ABA7669929B6343000693C10 /* AttractionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669829B6343000693C10 /* AttractionsData.json */; };
+		ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669A29B634EE00693C10 /* NoServiceError.xml */; };
+		ABA7669D29B6355000693C10 /* ServiceAccessDeniedError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */; };
+		ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669E29B6358600693C10 /* RequestExceededError.xml */; };
+		ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */; };
+		ABA766A529B6360300693C10 /* UnknownError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A429B6360300693C10 /* UnknownError.xml */; };
 		ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +47,12 @@
 		ABA2E35B29A2700100965558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA2E35E29A2700100965558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA2E36029A2700100965558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA7669829B6343000693C10 /* AttractionsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AttractionsData.json; sourceTree = "<group>"; };
+		ABA7669A29B634EE00693C10 /* NoServiceError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NoServiceError.xml; sourceTree = "<group>"; };
+		ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ServiceAccessDeniedError.xml; sourceTree = "<group>"; };
+		ABA7669E29B6358600693C10 /* RequestExceededError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RequestExceededError.xml; sourceTree = "<group>"; };
+		ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DeadlineExpiredError.xml; sourceTree = "<group>"; };
+		ABA766A429B6360300693C10 /* UnknownError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UnknownError.xml; sourceTree = "<group>"; };
 		ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JejuAttractionsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuAttractionsMapTests.swift; sourceTree = "<group>"; };
 		C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,9 +141,31 @@
 			name = Container;
 			sourceTree = "<group>";
 		};
+		ABA7669629B633FF00693C10 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7669729B6340D00693C10 /* FetchAttractions */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		ABA7669729B6340D00693C10 /* FetchAttractions */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7669829B6343000693C10 /* AttractionsData.json */,
+				ABA7669A29B634EE00693C10 /* NoServiceError.xml */,
+				ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */,
+				ABA7669E29B6358600693C10 /* RequestExceededError.xml */,
+				ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */,
+				ABA766A429B6360300693C10 /* UnknownError.xml */,
+			);
+			path = FetchAttractions;
+			sourceTree = "<group>";
+		};
 		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABA7669629B633FF00693C10 /* Responses */,
 				ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */,
 			);
 			path = JejuAttractionsMapTests;
@@ -232,6 +266,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA7669D29B6355000693C10 /* ServiceAccessDeniedError.xml in Resources */,
+				ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */,
+				ABA7669929B6343000693C10 /* AttractionsData.json in Resources */,
+				ABA766A529B6360300693C10 /* UnknownError.xml in Resources */,
+				ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */,
+				ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
