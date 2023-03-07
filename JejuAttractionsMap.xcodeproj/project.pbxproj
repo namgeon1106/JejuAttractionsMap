@@ -165,7 +165,6 @@
 		ABA7669629B633FF00693C10 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				ABA766A629B6363D00693C10 /* Extensions */,
 				ABA7669729B6340D00693C10 /* FetchAttractions */,
 			);
 			path = Responses;
@@ -212,6 +211,7 @@
 		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
 			isa = PBXGroup;
 			children = (
+				ABA766A629B6363D00693C10 /* Extensions */,
 				ABA7669629B633FF00693C10 /* Responses */,
 				ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */,
 			);
