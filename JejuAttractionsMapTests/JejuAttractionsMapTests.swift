@@ -66,4 +66,9 @@ final class JejuAttractionsMapTests: XCTestCase {
         sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "DeadlineExpiredError", format: "xml"))
         checkIfFetchAllAttractionsThrows(error: .serviceExpired)
     }
+    
+    func testFetchAllAttractions_WhenResponseIsUnknownError_ThrowsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "UnknownError", format: "xml"))
+        checkIfFetchAllAttractionsThrows(error: .unknown)
+    }
 }
