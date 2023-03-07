@@ -56,4 +56,9 @@ final class JejuAttractionsMapTests: XCTestCase {
         sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "ServiceAccessDeniedError", format: "xml"))
         checkIfFetchAllAttractionsThrows(error: .serviceAccessDenied)
     }
+    
+    func testFetchAllAttractions_WhenResponseIsRequestExceededError_ThrowsRequestExceeded() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "RequestExceededError", format: "xml"))
+        checkIfFetchAllAttractionsThrows(error: .requestExceeded)
+    }
 }
