@@ -109,6 +109,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AB3788D129B7118B00C33270 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */,
+				ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		ABA2E34629A2700000965558 = {
 			isa = PBXGroup;
 			children = (
@@ -194,8 +203,7 @@
 		ABA766AD29B63FAC00693C10 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */,
-				ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */,
+				AB3788D129B7118B00C33270 /* Responses */,
 				AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */,
 			);
 			path = Network;
