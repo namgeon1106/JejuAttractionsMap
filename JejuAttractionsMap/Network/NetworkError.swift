@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum NetworkError {
+enum NetworkError: Error {
     case serviceExpired, serviceAccessDenied, requestExceeded, unknown
 }

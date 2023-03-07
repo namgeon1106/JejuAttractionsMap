@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import XMLCoder
 
 class NetworkManager {
     let session: URLSessionProtocol
@@ -28,6 +29,15 @@ class NetworkManager {
             return attractionsResponse.data
         }
         
-        return []
+        guard let errorResponse = try? XMLDecoder().decode(OpenAPI_ServiceResponse.self, from: data) else {
+            return []
+        }
+        
+        switch errorResponse.cmmMsgHeader.returnReasonCode {
+        case 12:
+            throw NetworkError.serviceExpired
+        default:
+            throw NetworkError.unknown
+        }
     }
 }
