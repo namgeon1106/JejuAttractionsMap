@@ -30,7 +30,7 @@ class NetworkManager {
         }
         
         guard let errorResponse = try? XMLDecoder().decode(OpenAPI_ServiceResponse.self, from: data) else {
-            return []
+            throw NetworkError.unknown
         }
         
         switch errorResponse.cmmMsgHeader.returnReasonCode {
