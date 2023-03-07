@@ -12,6 +12,24 @@ import XMLCoder
 final class JejuAttractionsMapTests: XCTestCase {
     var sut: NetworkManager!
     
+    func checkIfFetchAllAttractionsThrows(error expectedError: NetworkError) {
+        let expectation = expectation(description: "Task must be executed.")
+        
+        Task {
+            do {
+                let _ = try await sut.fetchAllAttractions()
+                XCTFail("Error must be thrown.")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as? NetworkError, expectedError)
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
     func testFetchAllAttractions_WhenResponseIsGood_ReturnsAttractions() throws {
         sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "AttractionsData", format: "json"))
         let expectation = expectation(description: "Task must be executed.")
@@ -31,20 +49,6 @@ final class JejuAttractionsMapTests: XCTestCase {
     
     func testFetchAllAttractions_WhenResponseIsNoServiceError_ThrowsServiceExpired() {
         sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoServiceError", format: "xml"))
-        let expectation = expectation(description: "Task must be executed.")
-        
-        Task {
-            do {
-                let _ = try await sut.fetchAllAttractions()
-                XCTFail("Error must be thrown.")
-            } catch {
-                XCTAssertTrue(error is NetworkError)
-                XCTAssertEqual(error as? NetworkError, NetworkError.serviceExpired)
-            }
-            
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1)
+        checkIfFetchAllAttractionsThrows(error: .serviceExpired)
     }
 }
