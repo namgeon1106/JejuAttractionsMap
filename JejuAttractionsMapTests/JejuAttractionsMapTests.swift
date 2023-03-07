@@ -28,4 +28,23 @@ final class JejuAttractionsMapTests: XCTestCase {
         
         wait(for: [expectation], timeout: 1)
     }
+    
+    func testFetchAllAttractions_WhenResponseIsNoServiceError_ThrowsServiceExpired() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoServiceError", format: "xml"))
+        let expectation = expectation(description: "Task must be executed.")
+        
+        Task {
+            do {
+                let _ = try await sut.fetchAllAttractions()
+                XCTFail("Error must be thrown.")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as? NetworkError, NetworkError.serviceExpired)
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }
