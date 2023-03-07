@@ -12,6 +12,7 @@ import XMLCoder
 final class JejuAttractionsMapTests: XCTestCase {
     var sut: NetworkManager!
     
+    // MARK: - 에러 throw check 함수
     func checkIfFetchAllAttractionsThrows(error expectedError: NetworkError) {
         let expectation = expectation(description: "Task must be executed.")
         
@@ -30,6 +31,7 @@ final class JejuAttractionsMapTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
+    // MARK: - fetchAllAttractions()에 대한 테스트
     func testFetchAllAttractions_WhenResponseIsGood_ReturnsAttractions() throws {
         sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "AttractionsData", format: "json"))
         let expectation = expectation(description: "Task must be executed.")
