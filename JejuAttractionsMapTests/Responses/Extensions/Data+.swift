@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import XCTest
 
 extension Data {
     static func fromFile(fileName: String, format: String) throws -> Data {
         let bundle = Bundle(for: TestBundleClass.self)
-        
-        let path = bundle.path(forResource: fileName, ofType: format)!
-        return try String(contentsOfFile: path).data(using: .utf8)!
+        let url = try XCTUnwrap(bundle.url(forResource: fileName, withExtension: format),
+                                "Unable to find \(fileName).json. Did you add it to the tests?",
+                                file: #file, line: #line)
+        return try Data(contentsOf: url)
     }
 }
 
