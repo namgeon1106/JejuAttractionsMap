@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Attraction: Decodable {
+struct Attraction: Decodable, Equatable {
     let infoId: Int
     let name: String
     let newAddr: String

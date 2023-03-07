@@ -7,14 +7,25 @@
 
 import XCTest
 import XMLCoder
+@testable import JejuAttractionsMap
 
 final class JejuAttractionsMapTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    var sut: NetworkManager!
+    
+    func testFetchAllAttractions_WhenResponseIsGood_ReturnsAttractions() throws {
+        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "AttractionsData", format: "json"))
+        let expectation = expectation(description: "Task must be executed.")
+        
+        let dataFromFile = try Data.fromFile(fileName: "AttractionsData", format: "json")
+        let expectedResult = try JSONDecoder().decode(AttractionsResponse.self, from: dataFromFile).data
+        
+        Task {
+            let result = try await sut.fetchAllAttractions()
+            XCTAssertEqual(result, expectedResult)
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
     }
 }
