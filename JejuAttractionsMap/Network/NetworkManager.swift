@@ -23,7 +23,7 @@ class NetworkManager {
     
     func fetchAllAttractions() async throws -> [Attraction] {
         let url = URL(string: attractionsURLString)!
-        let (data, response) = try await session.data(for: URLRequest(url: url))
+        let (data, _) = try await session.data(for: URLRequest(url: url))
         
         if let attractionsResponse = try? JSONDecoder().decode(AttractionsResponse.self, from: data) {
             return attractionsResponse.data
@@ -36,6 +36,8 @@ class NetworkManager {
         switch errorResponse.cmmMsgHeader.returnReasonCode {
         case 12:
             throw NetworkError.serviceExpired
+        case 20:
+            throw NetworkError.serviceAccessDenied
         default:
             throw NetworkError.unknown
         }
