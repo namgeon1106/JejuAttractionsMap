@@ -34,7 +34,7 @@ class NetworkManager {
         }
         
         switch errorResponse.cmmMsgHeader.returnReasonCode {
-        case 12:
+        case 12, 31:
             throw NetworkError.serviceExpired
         case 20:
             throw NetworkError.serviceAccessDenied
