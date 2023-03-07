@@ -38,6 +38,8 @@ class NetworkManager {
             throw NetworkError.serviceExpired
         case 20:
             throw NetworkError.serviceAccessDenied
+        case 22:
+            throw NetworkError.requestExceeded
         default:
             throw NetworkError.unknown
         }
