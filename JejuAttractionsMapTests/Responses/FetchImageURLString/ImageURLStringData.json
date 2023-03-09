@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "num": "1",
+            "name": "1112도로_전경_001.jpg",
+            "fl": "관광지",
+            "imageUrl": "http://api.brandcontents.or.kr/jejuImage/1112도로_전경_001.jpg"
+        }
+    ],
+    "pageNo": "1",
+    "currentCount": 1,
+    "resultCode": 0,
+    "totalCount": 4,
+    "numOfRows": "1",
+    "resultMsg": "정상"
+}

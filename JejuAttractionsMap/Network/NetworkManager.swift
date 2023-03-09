@@ -17,6 +17,10 @@ class NetworkManager {
         "https://apis.data.go.kr/6500000/jjtb/locinfo?serviceKey=\(serviceKey)&pageNo=1&numOfRows=\(attractionsCount)"
     }
     
+    private var fetchImageInfoURLString: String {
+        "https://apis.data.go.kr/6500000/jjtb/image?serviceKey=\(serviceKey)&pageNo=1&numOfRows=1&name="
+    }
+    
     init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
