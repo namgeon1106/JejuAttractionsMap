@@ -8,5 +8,5 @@
 import Foundation
 
 enum NetworkError: Error {
-    case serviceExpired, serviceAccessDenied, requestExceeded, unknown
+    case serviceExpired, serviceAccessDenied, requestExceeded, unknown, noImage
 }

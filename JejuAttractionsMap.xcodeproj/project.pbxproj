@@ -11,6 +11,7 @@
 		58C38CEEFBD4705128F95DA1 /* Pods_JejuAttractionsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */; };
 		AB046B4029B9BDD90081E83F /* ImageURLStringData.json in Resources */ = {isa = PBXBuildFile; fileRef = AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */; };
 		AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */; };
+		AB046B4429B9C64D0081E83F /* NoImageURLData.json in Resources */ = {isa = PBXBuildFile; fileRef = AB046B4329B9C64D0081E83F /* NoImageURLData.json */; };
 		AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */; };
 		AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D329B7120200C33270 /* MockURLSession.swift */; };
 		AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D529B7257C00C33270 /* NetworkManager.swift */; };
@@ -52,6 +53,7 @@
 		60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.debug.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.debug.xcconfig"; sourceTree = "<group>"; };
 		AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImageURLStringData.json; sourceTree = "<group>"; };
 		AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLStringResponse.swift; sourceTree = "<group>"; };
+		AB046B4329B9C64D0081E83F /* NoImageURLData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NoImageURLData.json; sourceTree = "<group>"; };
 		AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		AB3788D329B7120200C33270 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		AB3788D529B7257C00C33270 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */,
+				AB046B4329B9C64D0081E83F /* NoImageURLData.json */,
 			);
 			path = FetchImageURLString;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB046B4429B9C64D0081E83F /* NoImageURLData.json in Resources */,
 				ABA7669D29B6355000693C10 /* ServiceAccessDeniedError.xml in Resources */,
 				ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */,
 				ABA7669929B6343000693C10 /* AttractionsData.json in Resources */,

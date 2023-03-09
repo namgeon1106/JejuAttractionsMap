@@ -31,6 +31,24 @@ final class JejuAttractionsMapTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
+    func checkIfFetchImageURLStringThrows(error expectedError: NetworkError) {
+        let expectation = expectation(description: "Task must be executed.")
+        
+        Task {
+            do {
+                let _ = try await sut.fetchImageURLString(for: "")
+                XCTFail("Error must be thrown.")
+            } catch {
+                XCTAssertTrue(error is NetworkError)
+                XCTAssertEqual(error as? NetworkError, expectedError)
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
     // MARK: - fetchAllAttractions()에 대한 테스트
     func testFetchAllAttractions_WhenResponseIsGood_ReturnsAttractions() throws {
         sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "AttractionsData", format: "json"))
@@ -95,5 +113,10 @@ final class JejuAttractionsMapTests: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 1)
+    }
+    
+    func testFetchImageURLString_WhenResponseHasNoImageData_ThrowsNoImage() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoImageURLData", format: "json"))
+        checkIfFetchImageURLStringThrows(error: .noImage)
     }
 }
