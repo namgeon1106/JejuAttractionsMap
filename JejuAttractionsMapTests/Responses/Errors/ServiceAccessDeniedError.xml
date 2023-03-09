@@ -1,0 +1,7 @@
+<OpenAPI_ServiceResponse>
+    <cmmMsgHeader>
+        <errMsg>SERVICE ERROR</errMsg>
+        <returnAuthMsg>SERVICE_ACCESS_DENIED_ERROR</returnAuthMsg>
+        <returnReasonCode>20</returnReasonCode>
+    </cmmMsgHeader>
+</OpenAPI_ServiceResponse>

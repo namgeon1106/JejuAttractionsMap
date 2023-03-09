@@ -1,0 +1,7 @@
+<OpenAPI_ServiceResponse>
+    <cmmMsgHeader>
+        <errMsg>SERVICE ERROR</errMsg>
+        <returnAuthMsg>UNKNOWN_ERROR</returnAuthMsg>
+        <returnReasonCode>99</returnReasonCode>
+    </cmmMsgHeader>
+</OpenAPI_ServiceResponse>

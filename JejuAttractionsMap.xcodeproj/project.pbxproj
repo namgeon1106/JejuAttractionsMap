@@ -9,12 +9,30 @@
 /* Begin PBXBuildFile section */
 		21565CF696659F6307739E3E /* Pods_JejuAttractionsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */; };
 		58C38CEEFBD4705128F95DA1 /* Pods_JejuAttractionsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */; };
+		AB046B4029B9BDD90081E83F /* ImageURLStringData.json in Resources */ = {isa = PBXBuildFile; fileRef = AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */; };
+		AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */; };
+		AB046B4429B9C64D0081E83F /* NoImageURLData.json in Resources */ = {isa = PBXBuildFile; fileRef = AB046B4329B9C64D0081E83F /* NoImageURLData.json */; };
+		AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */; };
+		AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D329B7120200C33270 /* MockURLSession.swift */; };
+		AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D529B7257C00C33270 /* NetworkManager.swift */; };
+		AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D729B72EB600C33270 /* NetworkError.swift */; };
+		AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3788DB29B77B5C00C33270 /* NotXML.json */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
 		ABA2E35729A2700000965558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* ViewController.swift */; };
 		ABA2E35A29A2700000965558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35829A2700000965558 /* Main.storyboard */; };
 		ABA2E35C29A2700100965558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35B29A2700100965558 /* Assets.xcassets */; };
 		ABA2E35F29A2700100965558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */; };
+		ABA7669929B6343000693C10 /* AttractionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669829B6343000693C10 /* AttractionsData.json */; };
+		ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669A29B634EE00693C10 /* NoServiceError.xml */; };
+		ABA7669D29B6355000693C10 /* ServiceAccessDeniedError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */; };
+		ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669E29B6358600693C10 /* RequestExceededError.xml */; };
+		ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */; };
+		ABA766A529B6360300693C10 /* UnknownError.xml in Resources */ = {isa = PBXBuildFile; fileRef = ABA766A429B6360300693C10 /* UnknownError.xml */; };
+		ABA766A829B6364A00693C10 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766A729B6364A00693C10 /* Data+.swift */; };
+		ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766AB29B63CCE00693C10 /* Attraction.swift */; };
+		ABA766AF29B63FC200693C10 /* AttractionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */; };
+		ABA766B129B63FF300693C10 /* OpenAPI_ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */; };
 		ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +51,14 @@
 		180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.release.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.release.xcconfig"; sourceTree = "<group>"; };
 		5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.debug.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.debug.xcconfig"; sourceTree = "<group>"; };
+		AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImageURLStringData.json; sourceTree = "<group>"; };
+		AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLStringResponse.swift; sourceTree = "<group>"; };
+		AB046B4329B9C64D0081E83F /* NoImageURLData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NoImageURLData.json; sourceTree = "<group>"; };
+		AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		AB3788D329B7120200C33270 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		AB3788D529B7257C00C33270 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AB3788D729B72EB600C33270 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AB3788DB29B77B5C00C33270 /* NotXML.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotXML.json; sourceTree = "<group>"; };
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2E35229A2700000965558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2E35429A2700000965558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +67,16 @@
 		ABA2E35B29A2700100965558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA2E35E29A2700100965558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA2E36029A2700100965558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA7669829B6343000693C10 /* AttractionsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AttractionsData.json; sourceTree = "<group>"; };
+		ABA7669A29B634EE00693C10 /* NoServiceError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NoServiceError.xml; sourceTree = "<group>"; };
+		ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ServiceAccessDeniedError.xml; sourceTree = "<group>"; };
+		ABA7669E29B6358600693C10 /* RequestExceededError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RequestExceededError.xml; sourceTree = "<group>"; };
+		ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DeadlineExpiredError.xml; sourceTree = "<group>"; };
+		ABA766A429B6360300693C10 /* UnknownError.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = UnknownError.xml; sourceTree = "<group>"; };
+		ABA766A729B6364A00693C10 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
+		ABA766AB29B63CCE00693C10 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
+		ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsResponse.swift; sourceTree = "<group>"; };
+		ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI_ServiceResponse.swift; sourceTree = "<group>"; };
 		ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JejuAttractionsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuAttractionsMapTests.swift; sourceTree = "<group>"; };
 		C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +123,46 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AB046B3B29B9B8BB0081E83F /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7669A29B634EE00693C10 /* NoServiceError.xml */,
+				ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */,
+				ABA7669E29B6358600693C10 /* RequestExceededError.xml */,
+				ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */,
+				ABA766A429B6360300693C10 /* UnknownError.xml */,
+				AB3788DB29B77B5C00C33270 /* NotXML.json */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		AB046B3C29B9BD380081E83F /* FetchImageURLString */ = {
+			isa = PBXGroup;
+			children = (
+				AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */,
+				AB046B4329B9C64D0081E83F /* NoImageURLData.json */,
+			);
+			path = FetchImageURLString;
+			sourceTree = "<group>";
+		};
+		AB3788D129B7118B00C33270 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */,
+				ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */,
+				AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		AB3788D229B711F500C33270 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AB3788D329B7120200C33270 /* MockURLSession.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		ABA2E34629A2700000965558 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +186,8 @@
 		ABA2E35129A2700000965558 /* JejuAttractionsMap */ = {
 			isa = PBXGroup;
 			children = (
+				ABA766AD29B63FAC00693C10 /* Network */,
+				ABA766AA29B63CC000693C10 /* Models */,
 				ABA2E35229A2700000965558 /* AppDelegate.swift */,
 				ABA2E35429A2700000965558 /* SceneDelegate.swift */,
 				ABA2E35629A2700000965558 /* ViewController.swift */,
@@ -129,9 +207,57 @@
 			name = Container;
 			sourceTree = "<group>";
 		};
+		ABA7669629B633FF00693C10 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7669729B6340D00693C10 /* FetchAttractions */,
+				AB046B3C29B9BD380081E83F /* FetchImageURLString */,
+				AB046B3B29B9B8BB0081E83F /* Errors */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		ABA7669729B6340D00693C10 /* FetchAttractions */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7669829B6343000693C10 /* AttractionsData.json */,
+			);
+			path = FetchAttractions;
+			sourceTree = "<group>";
+		};
+		ABA766A629B6363D00693C10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABA766A729B6364A00693C10 /* Data+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABA766AA29B63CC000693C10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABA766AB29B63CCE00693C10 /* Attraction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ABA766AD29B63FAC00693C10 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AB3788D129B7118B00C33270 /* Responses */,
+				AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */,
+				AB3788D529B7257C00C33270 /* NetworkManager.swift */,
+				AB3788D729B72EB600C33270 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		ABD9B47A29B4BEEF00A8FED0 /* JejuAttractionsMapTests */ = {
 			isa = PBXGroup;
 			children = (
+				AB3788D229B711F500C33270 /* Network */,
+				ABA766A629B6363D00693C10 /* Extensions */,
+				ABA7669629B633FF00693C10 /* Responses */,
 				ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */,
 			);
 			path = JejuAttractionsMapTests;
@@ -232,6 +358,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB046B4429B9C64D0081E83F /* NoImageURLData.json in Resources */,
+				ABA7669D29B6355000693C10 /* ServiceAccessDeniedError.xml in Resources */,
+				ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */,
+				ABA7669929B6343000693C10 /* AttractionsData.json in Resources */,
+				ABA766A529B6360300693C10 /* UnknownError.xml in Resources */,
+				ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */,
+				AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */,
+				AB046B4029B9BDD90081E83F /* ImageURLStringData.json in Resources */,
+				ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,9 +458,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */,
+				AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */,
+				ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */,
 				ABA2E35729A2700000965558 /* ViewController.swift in Sources */,
 				ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */,
+				AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */,
 				ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */,
+				AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */,
+				ABA766AF29B63FC200693C10 /* AttractionsResponse.swift in Sources */,
+				ABA766B129B63FF300693C10 /* OpenAPI_ServiceResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +475,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */,
 				ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */,
+				ABA766A829B6364A00693C10 /* Data+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
