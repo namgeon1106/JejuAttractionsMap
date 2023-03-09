@@ -44,4 +44,8 @@ class NetworkManager {
             throw NetworkError.unknown
         }
     }
+    
+    func fetchImageURLString(for name: String) async throws -> String {
+        return ""
+    }
 }
