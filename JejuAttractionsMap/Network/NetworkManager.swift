@@ -50,6 +50,18 @@ class NetworkManager {
     }
     
     func fetchImageURLString(for name: String) async throws -> String {
+        let urlString = fetchImageInfoURLString + name
+        let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: encodedURLString)!
+        
+        let (data, _) = try await session.data(for: URLRequest(url: url))
+        
+        if let imageURLResponse = try? JSONDecoder().decode(ImageURLStringResponse.self, from: data) {
+            if let imageURLData = imageURLResponse.data.first {
+                return imageURLData.imageUrl
+            }
+        }
+        
         return ""
     }
 }
