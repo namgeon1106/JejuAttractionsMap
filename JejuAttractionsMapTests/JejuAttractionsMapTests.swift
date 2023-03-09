@@ -78,4 +78,22 @@ final class JejuAttractionsMapTests: XCTestCase {
         sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NotXML", format: "json"))
         checkIfFetchAllAttractionsThrows(error: .unknown)
     }
+    
+    // MARK: - fetchImageURLString(for:)에 대한 테스트
+    func testFetchImageURLString_WhenResponseIsGood_ReturnsImageURLString() throws {
+        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "ImageURLStringData", format: "json"))
+        let expectation = expectation(description: "Task must be executed.")
+        
+        let dataFromFile = try Data.fromFile(fileName: "ImageURLStringData", format: "json")
+        let expectedResult = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).data.first?.imageUrl
+        
+        Task {
+            let result = try await sut.fetchImageURLString(for: "1112도로")
+            XCTAssertEqual(result, expectedResult)
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }
