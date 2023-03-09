@@ -59,6 +59,8 @@ class NetworkManager {
         if let imageURLResponse = try? JSONDecoder().decode(ImageURLStringResponse.self, from: data) {
             if let imageURLData = imageURLResponse.data.first {
                 return imageURLData.imageUrl
+            } else {
+                throw NetworkError.noImage
             }
         }
         
