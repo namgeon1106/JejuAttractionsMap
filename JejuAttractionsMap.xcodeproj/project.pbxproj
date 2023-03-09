@@ -117,6 +117,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AB046B3B29B9B8BB0081E83F /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				ABA7669A29B634EE00693C10 /* NoServiceError.xml */,
+				ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */,
+				ABA7669E29B6358600693C10 /* RequestExceededError.xml */,
+				ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */,
+				ABA766A429B6360300693C10 /* UnknownError.xml */,
+				AB3788DB29B77B5C00C33270 /* NotXML.json */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		AB3788D129B7118B00C33270 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA7669729B6340D00693C10 /* FetchAttractions */,
+				AB046B3B29B9B8BB0081E83F /* Errors */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -190,12 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				ABA7669829B6343000693C10 /* AttractionsData.json */,
-				ABA7669A29B634EE00693C10 /* NoServiceError.xml */,
-				ABA7669C29B6355000693C10 /* ServiceAccessDeniedError.xml */,
-				ABA7669E29B6358600693C10 /* RequestExceededError.xml */,
-				ABA766A229B635D900693C10 /* DeadlineExpiredError.xml */,
-				ABA766A429B6360300693C10 /* UnknownError.xml */,
-				AB3788DB29B77B5C00C33270 /* NotXML.json */,
 			);
 			path = FetchAttractions;
 			sourceTree = "<group>";
