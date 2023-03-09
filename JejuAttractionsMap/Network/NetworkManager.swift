@@ -9,7 +9,7 @@ import Foundation
 import XMLCoder
 
 class NetworkManager {
-    let session: URLSessionProtocol
+    private let session: URLSessionProtocol
     private let attractionsCount = 1047
     private let serviceKey = "P6%2BlyELthAZGU%2BPOAS5mE3%2BqJX78QgOALbnBIdeZZOYnNjpa5TcB7OyWIODvx7dN1VZkMsDvEX554ddUBuYqhg%3D%3D"
     
@@ -78,5 +78,9 @@ class NetworkManager {
         default:
             throw NetworkError.unknown
         }
+    }
+    
+    func fetchImage(from urlString: String) async throws -> Data {
+        return try await session.data(for: URLRequest(url: URL(string: urlString)!)).0
     }
 }
