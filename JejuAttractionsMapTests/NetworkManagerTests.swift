@@ -9,7 +9,7 @@ import XCTest
 import XMLCoder
 @testable import JejuAttractionsMap
 
-final class JejuAttractionsMapTests: XCTestCase {
+final class NetworkManagerTests: XCTestCase {
     var sut: NetworkManager!
     
     // MARK: - 에러 throw check 함수

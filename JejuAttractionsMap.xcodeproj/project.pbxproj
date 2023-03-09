@@ -33,7 +33,7 @@
 		ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766AB29B63CCE00693C10 /* Attraction.swift */; };
 		ABA766AF29B63FC200693C10 /* AttractionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */; };
 		ABA766B129B63FF300693C10 /* OpenAPI_ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */; };
-		ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */; };
+		ABD9B47C29B4BEEF00A8FED0 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD9B47B29B4BEEF00A8FED0 /* NetworkManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +78,7 @@
 		ABA766AE29B63FC200693C10 /* AttractionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsResponse.swift; sourceTree = "<group>"; };
 		ABA766B029B63FF300693C10 /* OpenAPI_ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI_ServiceResponse.swift; sourceTree = "<group>"; };
 		ABD9B47929B4BEEF00A8FED0 /* JejuAttractionsMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JejuAttractionsMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JejuAttractionsMapTests.swift; sourceTree = "<group>"; };
+		ABD9B47B29B4BEEF00A8FED0 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D60F06F53F0DEBDF49246679 /* Pods-JejuAttractionsMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMapTests.release.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMapTests/Pods-JejuAttractionsMapTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,7 +258,7 @@
 				AB3788D229B711F500C33270 /* Network */,
 				ABA766A629B6363D00693C10 /* Extensions */,
 				ABA7669629B633FF00693C10 /* Responses */,
-				ABD9B47B29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift */,
+				ABD9B47B29B4BEEF00A8FED0 /* NetworkManagerTests.swift */,
 			);
 			path = JejuAttractionsMapTests;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */,
-				ABD9B47C29B4BEEF00A8FED0 /* JejuAttractionsMapTests.swift in Sources */,
+				ABD9B47C29B4BEEF00A8FED0 /* NetworkManagerTests.swift in Sources */,
 				ABA766A829B6364A00693C10 /* Data+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
