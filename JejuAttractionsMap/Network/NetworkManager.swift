@@ -64,6 +64,19 @@ class NetworkManager {
             }
         }
         
-        return ""
+        guard let errorResponse = try? XMLDecoder().decode(OpenAPI_ServiceResponse.self, from: data) else {
+            throw NetworkError.unknown
+        }
+        
+        switch errorResponse.cmmMsgHeader.returnReasonCode {
+        case 12, 31:
+            throw NetworkError.serviceExpired
+        case 20:
+            throw NetworkError.serviceAccessDenied
+        case 22:
+            throw NetworkError.requestExceeded
+        default:
+            throw NetworkError.unknown
+        }
     }
 }
