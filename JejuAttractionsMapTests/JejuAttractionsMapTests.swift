@@ -116,7 +116,37 @@ final class JejuAttractionsMapTests: XCTestCase {
     }
     
     func testFetchImageURLString_WhenResponseHasNoImageData_ThrowsNoImage() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoImageURLData", format: "json"))
+        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "NoImageURLData", format: "json"))
         checkIfFetchImageURLStringThrows(error: .noImage)
+    }
+    
+    func testFetchImageURLString_WhenResponseIsNoServiceError_ThrowsServiceExpired() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoServiceError", format: "xml"))
+        checkIfFetchImageURLStringThrows(error: .serviceExpired)
+    }
+    
+    func testFetchImageURLString_WhenResponseIsServiceAccessDeniedError_ThrowsServiceAccessDenied() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "ServiceAccessDeniedError", format: "xml"))
+        checkIfFetchImageURLStringThrows(error: .serviceAccessDenied)
+    }
+    
+    func testFetchImageURLString_WhenResponseIsRequestExceededError_ThrowsRequestExceeded() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "RequestExceededError", format: "xml"))
+        checkIfFetchImageURLStringThrows(error: .requestExceeded)
+    }
+    
+    func testFetchImageURLString_WhenResponseIsDeadlineExpiredError_ThrowsServiceExpired() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "DeadlineExpiredError", format: "xml"))
+        checkIfFetchImageURLStringThrows(error: .serviceExpired)
+    }
+    
+    func testFetchImageURLString_WhenResponseIsUnknownError_ThrowsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "UnknownError", format: "xml"))
+        checkIfFetchImageURLStringThrows(error: .unknown)
+    }
+    
+    func testFetchImageURLString_WhenResponseIsNotXML_ThrowsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NotXML", format: "json"))
+        checkIfFetchImageURLStringThrows(error: .unknown)
     }
 }
