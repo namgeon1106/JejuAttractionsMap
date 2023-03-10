@@ -79,8 +79,4 @@ class NetworkManager {
             throw NetworkError.unknown
         }
     }
-    
-    func fetchImage(from urlString: String) async throws -> Data {
-        return try await session.data(for: URLRequest(url: URL(string: urlString)!)).0
-    }
 }
