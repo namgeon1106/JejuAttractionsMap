@@ -21,7 +21,7 @@
 		AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
-		ABA2E35729A2700000965558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* ViewController.swift */; };
+		ABA2E35729A2700000965558 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* MapViewController.swift */; };
 		ABA2E35C29A2700100965558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35B29A2700100965558 /* Assets.xcassets */; };
 		ABA2E35F29A2700100965558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */; };
 		ABA7669929B6343000693C10 /* AttractionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669829B6343000693C10 /* AttractionsData.json */; };
@@ -65,7 +65,7 @@
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2E35229A2700000965558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2E35429A2700000965558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABA2E35629A2700000965558 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABA2E35629A2700000965558 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ABA2E35B29A2700100965558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA2E35E29A2700100965558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA2E36029A2700100965558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 				ABA766AA29B63CC000693C10 /* Models */,
 				ABA2E35229A2700000965558 /* AppDelegate.swift */,
 				ABA2E35429A2700000965558 /* SceneDelegate.swift */,
-				ABA2E35629A2700000965558 /* ViewController.swift */,
+				ABA2E35629A2700000965558 /* MapViewController.swift */,
 				ABA7666629B5B0D700693C10 /* Container */,
 			);
 			path = JejuAttractionsMap;
@@ -480,7 +480,7 @@
 				AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */,
 				AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */,
 				ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */,
-				ABA2E35729A2700000965558 /* ViewController.swift in Sources */,
+				ABA2E35729A2700000965558 /* MapViewController.swift in Sources */,
 				ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */,
 				AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */,
 				ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */,

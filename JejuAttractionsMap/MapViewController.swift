@@ -8,7 +8,7 @@
 import UIKit
 import NMapsMap
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     let searchBar = UISearchBar()
     let searchCancelButton = {
         let button = UIButton()
