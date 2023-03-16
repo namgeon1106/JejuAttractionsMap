@@ -9,6 +9,17 @@ import UIKit
 import NMapsMap
 
 class MapViewController: UIViewController {
+    let viewModel: MapViewModel
+    
+    init(viewModel: MapViewModel = MapViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: Bundle.main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     let searchBar = UISearchBar()
     let searchCancelButton = {
         let button = UIButton()

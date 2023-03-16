@@ -20,6 +20,7 @@
 		AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */; };
 		AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */; };
 		AB68479829C346D600521463 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479729C346D600521463 /* MapViewModel.swift */; };
+		AB68479D29C34F4500521463 /* MapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479C29C34F4500521463 /* MapViewControllerTests.swift */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
 		ABA2E35729A2700000965558 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* MapViewController.swift */; };
@@ -64,6 +65,7 @@
 		AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
 		AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "가릿당_관광지안내_001-1.jpg"; path = "../../../../../가릿당_관광지안내_001-1.jpg"; sourceTree = "<group>"; };
 		AB68479729C346D600521463 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		AB68479C29C34F4500521463 /* MapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerTests.swift; sourceTree = "<group>"; };
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2E35229A2700000965558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2E35429A2700000965558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				ABD9B47B29B4BEEF00A8FED0 /* NetworkManagerTests.swift */,
 				AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */,
+				AB68479C29C34F4500521463 /* MapViewControllerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */,
 				ABD9B47C29B4BEEF00A8FED0 /* NetworkManagerTests.swift in Sources */,
 				ABA766A829B6364A00693C10 /* Data+.swift in Sources */,
+				AB68479D29C34F4500521463 /* MapViewControllerTests.swift in Sources */,
 				AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
