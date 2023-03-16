@@ -47,7 +47,7 @@ final class NetworkManagerIntegrationTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 10)
+        wait(for: [expectation], timeout: 3)
     }
     
     func testFetchImage_whenUsedWrongUrl_throwsNoImageError() {
@@ -65,6 +65,26 @@ final class NetworkManagerIntegrationTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 10)
+        wait(for: [expectation], timeout: 3)
+    }
+    
+    func testFetchImageURLString_whenValidNameUsed_returnsURLString() {
+        let expectedURLString = "http://api.brandcontents.or.kr/jejuImage/%EA%B0%80%EB%A6%BF%EB%8B%B9_%EA%B4%80%EA%B4%91%EC%A7%80%EC%95%88%EB%82%B4_001-1.jpg"
+        
+        let expectation = expectation(description: "Task must be executed.")
+        
+        Task {
+            do {
+                let urlString = try await sut.fetchImageURLString(for: "가릿당")
+                XCTAssertEqual(urlString, expectedURLString)
+            } catch {
+                print(error)
+                XCTFail()
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 3)
     }
 }
