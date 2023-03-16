@@ -18,6 +18,7 @@
 		AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D729B72EB600C33270 /* NetworkError.swift */; };
 		AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3788DB29B77B5C00C33270 /* NotXML.json */; };
 		AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */; };
+		AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
 		ABA2E35729A2700000965558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* ViewController.swift */; };
@@ -61,6 +62,7 @@
 		AB3788D729B72EB600C33270 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AB3788DB29B77B5C00C33270 /* NotXML.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotXML.json; sourceTree = "<group>"; };
 		AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
+		AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "가릿당_관광지안내_001-1.jpg"; path = "../../../../../가릿당_관광지안내_001-1.jpg"; sourceTree = "<group>"; };
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2E35229A2700000965558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2E35429A2700000965558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,14 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		AB68479029C2D13F00521463 /* FetchImage */ = {
+			isa = PBXGroup;
+			children = (
+				AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */,
+			);
+			path = FetchImage;
+			sourceTree = "<group>";
+		};
 		ABA2E34629A2700000965558 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		ABA7669629B633FF00693C10 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				AB68479029C2D13F00521463 /* FetchImage */,
 				ABA7669729B6340D00693C10 /* FetchAttractions */,
 				AB046B3C29B9BD380081E83F /* FetchImageURLString */,
 				AB046B3B29B9B8BB0081E83F /* Errors */,
@@ -377,6 +388,7 @@
 				ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */,
 				AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */,
 				AB046B4029B9BDD90081E83F /* ImageURLStringData.json in Resources */,
+				AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */,
 				ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
