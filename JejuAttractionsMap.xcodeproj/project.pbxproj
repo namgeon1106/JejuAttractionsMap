@@ -192,6 +192,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		AB68479929C34EBC00521463 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABA2E35629A2700000965558 /* MapViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ABA2E34629A2700000965558 = {
 			isa = PBXGroup;
 			children = (
@@ -218,9 +226,9 @@
 				ABA766AD29B63FAC00693C10 /* Network */,
 				ABA766AA29B63CC000693C10 /* Models */,
 				AB68479629C346C600521463 /* ViewModels */,
+				AB68479929C34EBC00521463 /* Views */,
 				ABA2E35229A2700000965558 /* AppDelegate.swift */,
 				ABA2E35429A2700000965558 /* SceneDelegate.swift */,
-				ABA2E35629A2700000965558 /* MapViewController.swift */,
 				ABA7666629B5B0D700693C10 /* Container */,
 			);
 			path = JejuAttractionsMap;
