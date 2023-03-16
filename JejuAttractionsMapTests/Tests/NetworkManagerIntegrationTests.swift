@@ -49,4 +49,22 @@ final class NetworkManagerIntegrationTests: XCTestCase {
         
         wait(for: [expectation], timeout: 10)
     }
+    
+    func testFetchImage_whenUsedWrongUrl_throwsNoImageError() {
+        let expectation = expectation(description: "Task must be executed.")
+        
+        Task {
+            do {
+                let _ = try await sut.fetchImage(from: "http://api.brandcontents.or.kr/jejuImage/%EA%B0%80%EB%A6%BF%EB%8B%B9_%EA%B4%80%EA%B4%91%EC%A7%80%EC%95%88%EB%82%B4_001-154.jpg")
+                
+                XCTFail()
+            } catch {
+                XCTAssertEqual(error as? NetworkError, NetworkError.noImage)
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 10)
+    }
 }
