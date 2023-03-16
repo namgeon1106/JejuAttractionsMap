@@ -79,4 +79,8 @@ class NetworkManager {
             throw NetworkError.unknown
         }
     }
+    
+    func fetchImage(from urlString: String) async throws -> UIImage {
+        return UIImage()
+    }
 }
