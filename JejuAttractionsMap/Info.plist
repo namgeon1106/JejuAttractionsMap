@@ -6,6 +6,11 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>api.brandcontents.or.kr</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>apis.data.go.kr</key>
 			<dict>
 				<key>NSExceptionRequiresForwardSecrecy</key>

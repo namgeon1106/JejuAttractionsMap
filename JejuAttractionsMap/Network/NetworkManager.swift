@@ -81,6 +81,13 @@ class NetworkManager {
     }
     
     func fetchImage(from urlString: String) async throws -> UIImage {
-        return UIImage()
+        let url = URL(string: urlString)!
+        let (data, _) = try await session.data(for: URLRequest(url: url))
+        
+        guard let image = UIImage(data: data) else {
+            throw NetworkError.noImage
+        }
+        
+        return image
     }
 }

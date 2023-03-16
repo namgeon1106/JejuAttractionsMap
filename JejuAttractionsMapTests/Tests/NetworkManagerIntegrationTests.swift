@@ -47,6 +47,6 @@ final class NetworkManagerIntegrationTests: XCTestCase {
             expectation.fulfill()
         }
         
-        wait(for: [expectation], timeout: 3)
+        wait(for: [expectation], timeout: 10)
     }
 }
