@@ -50,15 +50,24 @@ class NetworkManager {
     }
     
     func fetchImageURLString(for name: String) async throws -> String {
-        let urlString = fetchImageInfoURLString + name
-        let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let encodeName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let encodedURLString = fetchImageInfoURLString + encodeName
         let url = URL(string: encodedURLString)!
         
         let (data, _) = try await session.data(for: URLRequest(url: url))
         
         if let imageURLResponse = try? JSONDecoder().decode(ImageURLStringResponse.self, from: data) {
             if let imageURLData = imageURLResponse.data.first {
-                return imageURLData.imageUrl
+                let originalUrlString = imageURLData.imageUrl
+                let imageNameString = originalUrlString.components(separatedBy: "jejuImage/")[1]
+                
+                let imageNameArr = imageNameString.components(separatedBy: ".")
+                let namePart = imageNameArr[0]
+                let format = imageNameArr[1]
+                
+                let encodedImageName = namePart.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                
+                return "http://api.brandcontents.or.kr/jejuImage/\(encodedImageName).\(format)"
             } else {
                 throw NetworkError.noImage
             }
@@ -78,5 +87,16 @@ class NetworkManager {
         default:
             throw NetworkError.unknown
         }
+    }
+    
+    func fetchImage(from urlString: String) async throws -> UIImage {
+        let url = URL(string: urlString)!
+        let (data, _) = try await session.data(for: URLRequest(url: url))
+        
+        guard let image = UIImage(data: data) else {
+            throw NetworkError.noImage
+        }
+        
+        return image
     }
 }

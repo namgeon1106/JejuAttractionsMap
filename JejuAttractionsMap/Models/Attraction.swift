@@ -10,7 +10,7 @@ import Foundation
 struct Attraction: Decodable, Equatable {
     let infoId: Int
     let name: String
-    let newAddr: String
+    let newAddr: String?
     let latitude: Double
     let longitude: Double
     let tel: String
@@ -25,7 +25,7 @@ struct Attraction: Decodable, Equatable {
         
         infoId = try Int(container.decode(String.self, forKey: .infoId)) ?? 0
         name = try container.decode(String.self, forKey: .name)
-        newAddr = try container.decode(String.self, forKey: .newAddr)
+        newAddr = try? container.decode(String.self, forKey: .newAddr)
         latitude = try Double(container.decode(String.self, forKey: .latitude)) ?? 0
         longitude = try Double(container.decode(String.self, forKey: .longitude)) ?? 0
         tel = try container.decode(String.self, forKey: .tel)
