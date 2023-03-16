@@ -103,7 +103,8 @@ final class NetworkManagerTests: XCTestCase {
         let expectation = expectation(description: "Task must be executed.")
         
         let dataFromFile = try Data.fromFile(fileName: "ImageURLStringData", format: "json")
-        let expectedResult = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).data.first?.imageUrl
+        let unencodedUrl = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).data.first?.imageUrl
+        let expectedResult = unencodedUrl!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         Task {
             let result = try await sut.fetchImageURLString(for: "1112도로")
