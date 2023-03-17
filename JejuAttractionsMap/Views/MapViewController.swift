@@ -17,6 +17,8 @@ class MapViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: Bundle.main)
         
+        tableView.dataSource = self
+        
         viewModel.$isSearching
             .map { !$0 }
             .assign(to: \.isHidden, on: searchCancelButton)
@@ -34,6 +36,27 @@ class MapViewController: UIViewController {
         viewModel.$searchText
             .map(Optional.init)
             .assign(to: \.text, on: searchBar)
+            .store(in: &subscriptions)
+        
+        viewModel.$searchText
+            .sink { [unowned self] _ in
+                self.activityIndicator.startAnimating()
+                self.activityIndicator.isHidden = false
+            }
+            .store(in: &subscriptions)
+        
+        viewModel.$filteredAttractions
+            .sink { [unowned self] _ in
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+            }
+            .store(in: &subscriptions)
+        
+        viewModel.$filteredAttractions
+            .delay(for: 0.05, scheduler: DispatchQueue.main)
+            .sink { [unowned self] _ in
+                self.tableView.reloadData()
+            }
             .store(in: &subscriptions)
     }
     
@@ -95,3 +118,12 @@ class MapViewController: UIViewController {
     }
 }
 
+extension MapViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell(style: .default, reuseIdentifier: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.filteredAttractions.count
+    }
+}

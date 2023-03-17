@@ -78,7 +78,7 @@ final class MapViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.activityIndicator.isAnimating, true)
         
         let expectation = expectation(description: "Wait for debounce publisher.")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
             XCTAssertEqual(self.sut.activityIndicator.isHidden, true)
             XCTAssertEqual(self.sut.activityIndicator.isAnimating, false)
             

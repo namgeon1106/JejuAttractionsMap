@@ -20,6 +20,18 @@ class MapViewModel {
     init(networkManager: NetworkManager = NetworkManager(session: URLSession.shared), isStub: Bool = false) {
         self.networkManager = networkManager
         
+        $searchText
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
+            .map { text in
+                if text == "" { return self.attractions }
+                
+                let filtered = self.attractions.filter { attraction in
+                    attraction.name.contains(text)
+                }
+                return filtered
+            }
+            .assign(to: &$filteredAttractions)
+        
         if isStub { return }
         Task {
             do {
@@ -49,5 +61,9 @@ class MapViewModel {
     func cancelSearch() {
         searchText = ""
         isSearching = false
+    }
+    
+    func searchFor(_ searchText: String) {
+        self.searchText = searchText
     }
 }
