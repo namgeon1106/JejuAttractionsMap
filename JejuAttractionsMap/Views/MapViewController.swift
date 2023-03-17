@@ -7,13 +7,35 @@
 
 import UIKit
 import NMapsMap
+import Combine
 
 class MapViewController: UIViewController {
     let viewModel: MapViewModel
+    var subscriptions = Set<AnyCancellable>()
     
     init(viewModel: MapViewModel = MapViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: Bundle.main)
+        
+        viewModel.$isSearching
+            .map { !$0 }
+            .assign(to: \.isHidden, on: searchCancelButton)
+            .store(in: &subscriptions)
+        
+        viewModel.$isSearching
+            .map { !$0 }
+            .assign(to: \.isHidden, on: tableView)
+            .store(in: &subscriptions)
+        
+        viewModel.$isSearching
+            .assign(to: \.isHidden, on: mapView)
+            .store(in: &subscriptions)
+        
+        viewModel.$searchText
+            .map(Optional.init)
+            .assign(to: \.text, on: searchBar)
+            .store(in: &subscriptions)
+        
     }
     
     required init?(coder: NSCoder) {
