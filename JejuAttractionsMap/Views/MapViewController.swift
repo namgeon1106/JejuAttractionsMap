@@ -35,7 +35,6 @@ class MapViewController: UIViewController {
             .map(Optional.init)
             .assign(to: \.text, on: searchBar)
             .store(in: &subscriptions)
-        
     }
     
     required init?(coder: NSCoder) {
