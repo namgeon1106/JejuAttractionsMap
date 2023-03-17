@@ -34,4 +34,11 @@ class MapViewModel {
     func loadAttractions(_ attractions: [Attraction]) {
         self.attractions = attractions
     }
+    
+    func initializeState() {
+        isSearching = false
+        searchText = ""
+        filteredAttractions = attractions
+        focusedAttraction = nil
+    }
 }
