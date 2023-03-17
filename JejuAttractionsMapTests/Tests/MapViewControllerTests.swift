@@ -44,4 +44,17 @@ final class MapViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.activityIndicator.isHidden, true)
         XCTAssertEqual(sut.activityIndicator.isAnimating, false)
     }
+    
+    func testViewController_whenCancelsSearch_updateUI() {
+        // given
+        sut.viewModel.startSearch()
+        
+        // when
+        sut.viewModel.cancelSearch()
+        
+        // then
+        XCTAssertEqual(sut.searchBar.text, "")
+        XCTAssertEqual(sut.tableView.isHidden, true)
+        XCTAssertEqual(sut.mapView.isHidden, false)
+    }
 }

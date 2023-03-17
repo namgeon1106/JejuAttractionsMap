@@ -45,4 +45,9 @@ class MapViewModel {
         isSearching = true
         focusedAttraction = nil
     }
+    
+    func cancelSearch() {
+        searchText = ""
+        isSearching = false
+    }
 }
