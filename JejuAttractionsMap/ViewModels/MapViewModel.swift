@@ -17,15 +17,21 @@ class MapViewModel {
     
     @Published private(set) var focusedAttraction: Attraction? = nil
     
-    init(networkManager: NetworkManager = NetworkManager(session: URLSession.shared)) {
+    init(networkManager: NetworkManager = NetworkManager(session: URLSession.shared), isStub: Bool = false) {
         self.networkManager = networkManager
         
+        if isStub { return }
         Task {
             do {
-                self.attractions = try await networkManager.fetchAllAttractions()
+                let attractions = try await networkManager.fetchAllAttractions()
+                loadAttractions(attractions)
             } catch {
                 print(error)
             }
         }
+    }
+    
+    func loadAttractions(_ attractions: [Attraction]) {
+        self.attractions = attractions
     }
 }
