@@ -58,6 +58,7 @@ class MapViewController: UIViewController {
     
     let tableView = UITableView()
     let mapView = NMFNaverMapView()
+    let activityIndicator = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,9 @@ class MapViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
+        
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        tableView.addSubview(activityIndicator)
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -86,10 +90,9 @@ class MapViewController: UIViewController {
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: tableView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: tableView.centerYAnchor)
         ])
-        
-        tableView.isHidden = true
-        searchCancelButton.isHidden = true
     }
 }
 

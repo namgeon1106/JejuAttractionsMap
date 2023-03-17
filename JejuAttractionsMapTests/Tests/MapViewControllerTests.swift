@@ -31,5 +31,7 @@ final class MapViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.searchCancelButton.isHidden, true)
         XCTAssertEqual(sut.tableView.isHidden, true)
         XCTAssertEqual(sut.mapView.isHidden, false)
+        XCTAssertEqual(sut.activityIndicator.isHidden, true)
+        XCTAssertEqual(sut.activityIndicator.isAnimating, false)
     }
 }
