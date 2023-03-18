@@ -12,6 +12,7 @@ import Combine
 class MapViewController: UIViewController {
     let viewModel: MapViewModel
     var subscriptions = Set<AnyCancellable>()
+    let attractionInfoSheetController = AttractionInfoSheetController()
     
     init(viewModel: MapViewModel = MapViewModel()) {
         self.viewModel = viewModel

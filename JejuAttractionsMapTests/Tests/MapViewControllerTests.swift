@@ -40,6 +40,7 @@ final class MapViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.mapView.isHidden, false)
         XCTAssertEqual(sut.activityIndicator.isHidden, true)
         XCTAssertEqual(sut.activityIndicator.isAnimating, false)
+        XCTAssertEqual(sut.attractionInfoSheetController.isBeingPresented, false)
     }
     
     func testViewController_whenStartsSearch_updatesUI() {
