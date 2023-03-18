@@ -7,9 +7,10 @@
 
 import XCTest
 @testable import JejuAttractionsMap
+import NMapsMap
 
 final class MapViewControllerTests: XCTestCase {
-    let sut = {
+    func generateMapViewController() -> MapViewController {
         let vc = MapViewController(viewModel:
                     MapViewModel(isStub: true)
                 )
@@ -18,19 +19,25 @@ final class MapViewControllerTests: XCTestCase {
         let attractions = try! JSONDecoder().decode(AttractionsResponse.self, from: data).data
         
         vc.viewModel.loadAttractions(attractions)
-        
         return vc
-    }()
+    }
+    
+    var sut: MapViewController!
     
     override func setUpWithError() throws {
-        sut.viewModel.initializeState()
+        sut = generateMapViewController()
         
-        let expectation = expectation(description: "Wait for debounce operator.")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-            expectation.fulfill()
-        }
+        let scene = UIApplication.shared.connectedScenes
+            .first as? UIWindowScene
         
-        wait(for: [expectation], timeout: 1)
+        scene?
+            .windows.first(where: { $0.isKeyWindow })?
+            .rootViewController = sut
+        sut.loadViewIfNeeded()
+    }
+    
+    override func tearDownWithError() throws {
+        sut = nil
     }
 
     func testViewController_whenInitialized_updatesUI() {
@@ -40,7 +47,7 @@ final class MapViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.mapView.isHidden, false)
         XCTAssertEqual(sut.activityIndicator.isHidden, true)
         XCTAssertEqual(sut.activityIndicator.isAnimating, false)
-        XCTAssertEqual(sut.attractionInfoSheetController.isBeingPresented, false)
+        XCTAssertEqual(sut.presentedViewController, nil)
     }
     
     func testViewController_whenStartsSearch_updatesUI() {
@@ -91,5 +98,29 @@ final class MapViewControllerTests: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 1)
+    }
+    
+    func testViewController_whenSelectAttraction_updatesUI() {
+        // given
+        let targetAttraction = sut.viewModel.attractions[0]
+        
+        // when
+        sut.viewModel.selectAttraction(targetAttraction)
+        
+        // then
+        XCTAssertEqual(sut.mapView.isHidden, false)
+        XCTAssertEqual(sut.tableView.isHidden, true)
+        
+        XCTAssertEqual(sut.searchBar.searchTextField.isEditing, false)
+        
+        XCTAssertEqual(sut.mapView.cameraPosition.zoom, 22)
+        XCTAssertLessThanOrEqual(abs(sut.mapView.cameraPosition.target.lat - targetAttraction.latitude), 0.001)
+        XCTAssertLessThanOrEqual(abs(sut.mapView.cameraPosition.target.lng - targetAttraction.longitude), 0.001)
+        
+        XCTAssertEqual(sut.presentedViewController, sut.attractionInfoSheetController)
+        XCTAssertEqual(sut.attractionInfoSheetController.nameLabel.text, targetAttraction.name)
+        XCTAssertEqual(sut.attractionInfoSheetController.addressLabel.text, "􀋕 \(targetAttraction.newAddr ?? "주소 불명")")
+        XCTAssertEqual(sut.attractionInfoSheetController.telLabel.text, "􀒥 \(targetAttraction.tel)")
+        XCTAssertEqual(sut.attractionInfoSheetController.descriptionLabel.text, targetAttraction.intro)
     }
 }
