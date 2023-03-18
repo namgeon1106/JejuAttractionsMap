@@ -59,6 +59,20 @@ class MapViewController: UIViewController {
                 self.tableView.reloadData()
             }
             .store(in: &subscriptions)
+        
+        viewModel.$focusedAttraction
+            .sink { [unowned self] attraction in
+                if let attraction {
+                    self.present(self.attractionInfoSheetController, animated: true)
+                    self.searchBar.endEditing(true)
+                    self.attractionInfoSheetController.attraction = attraction
+                    
+                    self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: attraction.latitude, lng: attraction.longitude), zoom: 22)))
+                } else {
+                    self.dismiss(animated: true)
+                }
+            }
+            .store(in: &subscriptions)
     }
     
     required init?(coder: NSCoder) {
@@ -80,7 +94,7 @@ class MapViewController: UIViewController {
     }()
     
     let tableView = UITableView()
-    let mapView = NMFNaverMapView()
+    let mapView = NMFMapView()
     let activityIndicator = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {

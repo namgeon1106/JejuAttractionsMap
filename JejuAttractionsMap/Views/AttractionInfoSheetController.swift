@@ -8,6 +8,15 @@
 import UIKit
 
 class AttractionInfoSheetController: UIViewController, UISheetPresentationControllerDelegate {
+    var attraction: Attraction! {
+        didSet {
+            nameLabel.text = attraction.name
+            addressLabel.text = "􀋕 \(attraction.newAddr ?? "주소 불명")"
+            telLabel.text = "􀒥 \(attraction.tel)"
+            descriptionLabel.text = attraction.intro
+        }
+    }
+    
     let nameLabel = {
         let label = UILabel()
         label.text = "관광지 이름"
@@ -55,6 +64,7 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
         sheetPresentationController?.prefersGrabberVisible = true
         sheetPresentationController?.detents = [.medium()]
         
+        self.view.backgroundColor = .systemBackground
         setLayout()
     }
     

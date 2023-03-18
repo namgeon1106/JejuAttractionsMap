@@ -66,4 +66,9 @@ class MapViewModel {
     func searchFor(_ searchText: String) {
         self.searchText = searchText
     }
+    
+    func selectAttraction(_ attraction: Attraction) {
+        focusedAttraction = attraction
+        isSearching = false
+    }
 }
