@@ -89,7 +89,12 @@ class MapViewController: UIViewController {
                     self.searchBar.endEditing(true)
                     self.attractionInfoSheetController.attraction = attraction
                     
-                    self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: attraction.latitude, lng: attraction.longitude), zoom: 12)))
+                    let cameraUpdate = NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: attraction.latitude, lng: attraction.longitude), zoom: 12))
+                    
+                    cameraUpdate.animation = .easeIn
+                    cameraUpdate.animationDuration = 1
+                    
+                    self.mapView.moveCamera(cameraUpdate)
                 } else {
                     self.dismiss(animated: true)
                 }
