@@ -15,6 +15,7 @@ extension UIImageView {
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.preferredSymbolConfiguration = configuration
+        imageView.tintColor = .label
         
         return imageView
     }
