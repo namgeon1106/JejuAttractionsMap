@@ -20,6 +20,17 @@ class MapViewController: UIViewController {
         
         tableView.dataSource = self
         
+        viewModel.$attractions
+            .receive(on: DispatchQueue.main)
+            .sink { attractions in
+                attractions.forEach { [unowned self] attraction in
+                    let marker = NMFMarker()
+                    marker.position = NMGLatLng(lat: attraction.latitude, lng: attraction.longitude)
+                    marker.mapView = self.mapView
+                }
+            }
+            .store(in: &subscriptions)
+        
         viewModel.$isSearching
             .map { !$0 }
             .assign(to: \.isHidden, on: searchCancelButton)
