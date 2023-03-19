@@ -197,6 +197,10 @@ extension MapViewController: UISearchBarDelegate {
         viewModel.searchFor(viewModel.searchText)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         return true
     }
