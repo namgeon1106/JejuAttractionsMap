@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
         super.init(nibName: nil, bundle: Bundle.main)
         
         tableView.dataSource = self
+        searchBar.delegate = self
         
         self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 33.360669, lng: 126.532947), zoom: 10)))
         
@@ -108,7 +109,7 @@ class MapViewController: UIViewController {
     let searchBar = UISearchBar()
     let searchCancelButton = {
         let button = UIButton()
-        button.setTitle("", for: .normal)
+        button.setTitle("취소", for: .normal)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -159,12 +160,34 @@ class MapViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension MapViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(style: .default, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        var content = cell.defaultContentConfiguration()
+        content.text = viewModel.filteredAttractions[indexPath.row].name
+        
+        cell.contentConfiguration = content
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.filteredAttractions.count
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension MapViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchFor(searchText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.startSearch()
+        viewModel.searchFor(viewModel.searchText)
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        return true
     }
 }
