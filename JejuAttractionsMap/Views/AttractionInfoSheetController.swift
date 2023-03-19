@@ -19,6 +19,7 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
     
     let nameLabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.text = "관광지 이름"
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         
@@ -83,6 +84,7 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 35),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -5),
             addressImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15),
             addressImageView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             addressLabel.topAnchor.constraint(equalTo: addressImageView.topAnchor),
