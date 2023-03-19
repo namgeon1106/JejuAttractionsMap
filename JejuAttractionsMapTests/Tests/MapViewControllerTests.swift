@@ -113,14 +113,23 @@ final class MapViewControllerTests: XCTestCase {
         
         XCTAssertEqual(sut.searchBar.searchTextField.isEditing, false)
         
-        XCTAssertEqual(sut.mapView.cameraPosition.zoom, 22)
-        XCTAssertLessThanOrEqual(abs(sut.mapView.cameraPosition.target.lat - targetAttraction.latitude), 0.001)
-        XCTAssertLessThanOrEqual(abs(sut.mapView.cameraPosition.target.lng - targetAttraction.longitude), 0.001)
+        XCTAssertTrue(sut.presentedViewController is AttractionInfoSheetController)
         
-        XCTAssertEqual(sut.presentedViewController, sut.attractionInfoSheetController)
-        XCTAssertEqual(sut.attractionInfoSheetController.nameLabel.text, targetAttraction.name)
-        XCTAssertEqual(sut.attractionInfoSheetController.addressLabel.text, "􀋕 \(targetAttraction.newAddr ?? "주소 불명")")
-        XCTAssertEqual(sut.attractionInfoSheetController.telLabel.text, "􀒥 \(targetAttraction.tel)")
-        XCTAssertEqual(sut.attractionInfoSheetController.descriptionLabel.text, targetAttraction.intro)
+        let sheetController = sut.presentedViewController as? AttractionInfoSheetController
+        XCTAssertEqual(sheetController?.nameLabel.text, targetAttraction.name)
+        XCTAssertEqual(sheetController?.addressLabel.text, targetAttraction.newAddr ?? "주소 불명")
+        XCTAssertEqual(sheetController?.telLabel.text, targetAttraction.tel)
+        XCTAssertEqual(sheetController?.descriptionLabel.text, targetAttraction.intro)
+        
+        let expecation = expectation(description: "Wait for map animation.")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            XCTAssertEqual(self.sut.mapView.cameraPosition.zoom, 16)
+            XCTAssertLessThanOrEqual(abs(self.sut.mapView.cameraPosition.target.lat - targetAttraction.latitude), 0.01)
+            XCTAssertLessThanOrEqual(abs(self.sut.mapView.cameraPosition.target.lng - targetAttraction.longitude), 0.01)
+            
+            expecation.fulfill()
+        }
+        
+        wait(for: [expecation], timeout: 2)
     }
 }

@@ -12,13 +12,37 @@ import Combine
 class MapViewController: UIViewController {
     let viewModel: MapViewModel
     var subscriptions = Set<AnyCancellable>()
-    let attractionInfoSheetController = AttractionInfoSheetController()
     
     init(viewModel: MapViewModel = MapViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: Bundle.main)
         
         tableView.dataSource = self
+        tableView.delegate = self
+        searchBar.delegate = self
+        
+        self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 33.360669, lng: 126.532947), zoom: 10)))
+        
+        // MARK: - Subscriptions
+        viewModel.$attractions
+            .receive(on: DispatchQueue.main)
+            .sink { attractions in
+                (0..<attractions.count).forEach { [unowned self] index in
+                    let attraction = attractions[index]
+                    let marker = NMFMarker()
+                    marker.zIndex = index
+                    marker.isHideCollidedMarkers = true
+                    marker.position = NMGLatLng(lat: attraction.latitude, lng: attraction.longitude)
+                    marker.mapView = self.mapView
+                    
+                    marker.touchHandler = { _ in
+                        self.viewModel.selectAttraction(attraction)
+                        
+                        return true
+                    }
+                }
+            }
+            .store(in: &subscriptions)
         
         viewModel.$isSearching
             .map { !$0 }
@@ -63,26 +87,34 @@ class MapViewController: UIViewController {
         viewModel.$focusedAttraction
             .sink { [unowned self] attraction in
                 if let attraction {
-                    self.present(self.attractionInfoSheetController, animated: true)
+                    let sheetController = AttractionInfoSheetController()
+                    self.present(sheetController, animated: true)
                     self.searchBar.endEditing(true)
-                    self.attractionInfoSheetController.attraction = attraction
+                    sheetController.attraction = attraction
+                    let cameraUpdate = NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: attraction.latitude, lng: attraction.longitude), zoom: 16))
                     
-                    self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: attraction.latitude, lng: attraction.longitude), zoom: 22)))
+                    cameraUpdate.animation = .easeIn
+                    cameraUpdate.animationDuration = 1
+                    
+                    self.mapView.moveCamera(cameraUpdate)
                 } else {
                     self.dismiss(animated: true)
                 }
             }
             .store(in: &subscriptions)
+        
+        searchCancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Subviews & layouts
     let searchBar = UISearchBar()
     let searchCancelButton = {
         let button = UIButton()
-        button.setTitle("", for: .normal)
+        button.setTitle("취소", for: .normal)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -133,12 +165,55 @@ class MapViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension MapViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(style: .default, reuseIdentifier: nil)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        var content = cell.defaultContentConfiguration()
+        content.text = viewModel.filteredAttractions[indexPath.row].name
+        
+        cell.contentConfiguration = content
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.filteredAttractions.count
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MapViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBar.endEditing(true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectAttraction(viewModel.filteredAttractions[indexPath.row])
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension MapViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchFor(searchText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.startSearch()
+        viewModel.searchFor(viewModel.searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        return true
+    }
+}
+
+// MARK: - button action
+extension MapViewController {
+    @objc func cancelButtonTapped() {
+        searchBar.endEditing(true)
+        viewModel.cancelSearch()
     }
 }
