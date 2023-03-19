@@ -12,7 +12,6 @@ import Combine
 class MapViewController: UIViewController {
     let viewModel: MapViewModel
     var subscriptions = Set<AnyCancellable>()
-    let attractionInfoSheetController = AttractionInfoSheetController()
     
     init(viewModel: MapViewModel = MapViewModel()) {
         self.viewModel = viewModel
@@ -85,10 +84,10 @@ class MapViewController: UIViewController {
         viewModel.$focusedAttraction
             .sink { [unowned self] attraction in
                 if let attraction {
-                    self.present(self.attractionInfoSheetController, animated: true)
+                    let sheetController = AttractionInfoSheetController()
+                    self.present(sheetController, animated: true)
                     self.searchBar.endEditing(true)
-                    self.attractionInfoSheetController.attraction = attraction
-                    
+                    sheetController.attraction = attraction
                     let cameraUpdate = NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: attraction.latitude, lng: attraction.longitude), zoom: 12))
                     
                     cameraUpdate.animation = .easeIn
