@@ -12,6 +12,7 @@
 		AB046B4029B9BDD90081E83F /* ImageURLStringData.json in Resources */ = {isa = PBXBuildFile; fileRef = AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */; };
 		AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */; };
 		AB046B4429B9C64D0081E83F /* NoImageURLData.json in Resources */ = {isa = PBXBuildFile; fileRef = AB046B4329B9C64D0081E83F /* NoImageURLData.json */; };
+		AB28427829C57A6F0042F37C /* AttractionInfoSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28427729C57A6F0042F37C /* AttractionInfoSheetController.swift */; };
 		AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */; };
 		AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D329B7120200C33270 /* MockURLSession.swift */; };
 		AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D529B7257C00C33270 /* NetworkManager.swift */; };
@@ -19,10 +20,11 @@
 		AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3788DB29B77B5C00C33270 /* NotXML.json */; };
 		AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */; };
 		AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */; };
+		AB68479829C346D600521463 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479729C346D600521463 /* MapViewModel.swift */; };
+		AB68479D29C34F4500521463 /* MapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479C29C34F4500521463 /* MapViewControllerTests.swift */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
 		ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35429A2700000965558 /* SceneDelegate.swift */; };
-		ABA2E35729A2700000965558 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* ViewController.swift */; };
-		ABA2E35A29A2700000965558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35829A2700000965558 /* Main.storyboard */; };
+		ABA2E35729A2700000965558 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35629A2700000965558 /* MapViewController.swift */; };
 		ABA2E35C29A2700100965558 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35B29A2700100965558 /* Assets.xcassets */; };
 		ABA2E35F29A2700100965558 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */; };
 		ABA7669929B6343000693C10 /* AttractionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = ABA7669829B6343000693C10 /* AttractionsData.json */; };
@@ -56,6 +58,7 @@
 		AB046B3F29B9BDD90081E83F /* ImageURLStringData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImageURLStringData.json; sourceTree = "<group>"; };
 		AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLStringResponse.swift; sourceTree = "<group>"; };
 		AB046B4329B9C64D0081E83F /* NoImageURLData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NoImageURLData.json; sourceTree = "<group>"; };
+		AB28427729C57A6F0042F37C /* AttractionInfoSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInfoSheetController.swift; sourceTree = "<group>"; };
 		AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		AB3788D329B7120200C33270 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		AB3788D529B7257C00C33270 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -63,11 +66,12 @@
 		AB3788DB29B77B5C00C33270 /* NotXML.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotXML.json; sourceTree = "<group>"; };
 		AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
 		AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "가릿당_관광지안내_001-1.jpg"; path = "../../../../../가릿당_관광지안내_001-1.jpg"; sourceTree = "<group>"; };
+		AB68479729C346D600521463 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		AB68479C29C34F4500521463 /* MapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerTests.swift; sourceTree = "<group>"; };
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA2E35229A2700000965558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABA2E35429A2700000965558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ABA2E35629A2700000965558 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ABA2E35929A2700000965558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABA2E35629A2700000965558 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ABA2E35B29A2700100965558 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA2E35E29A2700100965558 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA2E36029A2700100965558 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			children = (
 				ABD9B47B29B4BEEF00A8FED0 /* NetworkManagerTests.swift */,
 				AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */,
+				AB68479C29C34F4500521463 /* MapViewControllerTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -182,6 +187,23 @@
 				AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */,
 			);
 			path = FetchImage;
+			sourceTree = "<group>";
+		};
+		AB68479629C346C600521463 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AB68479729C346D600521463 /* MapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AB68479929C34EBC00521463 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABA2E35629A2700000965558 /* MapViewController.swift */,
+				AB28427729C57A6F0042F37C /* AttractionInfoSheetController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ABA2E34629A2700000965558 = {
@@ -209,10 +231,10 @@
 			children = (
 				ABA766AD29B63FAC00693C10 /* Network */,
 				ABA766AA29B63CC000693C10 /* Models */,
+				AB68479629C346C600521463 /* ViewModels */,
+				AB68479929C34EBC00521463 /* Views */,
 				ABA2E35229A2700000965558 /* AppDelegate.swift */,
 				ABA2E35429A2700000965558 /* SceneDelegate.swift */,
-				ABA2E35629A2700000965558 /* ViewController.swift */,
-				ABA2E35829A2700000965558 /* Main.storyboard */,
 				ABA7666629B5B0D700693C10 /* Container */,
 			);
 			path = JejuAttractionsMap;
@@ -372,7 +394,6 @@
 			files = (
 				ABA2E35F29A2700100965558 /* LaunchScreen.storyboard in Resources */,
 				ABA2E35C29A2700100965558 /* Assets.xcassets in Resources */,
-				ABA2E35A29A2700000965558 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,10 +505,12 @@
 				AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */,
 				AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */,
 				ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */,
-				ABA2E35729A2700000965558 /* ViewController.swift in Sources */,
+				ABA2E35729A2700000965558 /* MapViewController.swift in Sources */,
 				ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */,
 				AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */,
+				AB68479829C346D600521463 /* MapViewModel.swift in Sources */,
 				ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */,
+				AB28427829C57A6F0042F37C /* AttractionInfoSheetController.swift in Sources */,
 				AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */,
 				ABA766AF29B63FC200693C10 /* AttractionsResponse.swift in Sources */,
 				ABA766B129B63FF300693C10 /* OpenAPI_ServiceResponse.swift in Sources */,
@@ -501,6 +524,7 @@
 				AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */,
 				ABD9B47C29B4BEEF00A8FED0 /* NetworkManagerTests.swift in Sources */,
 				ABA766A829B6364A00693C10 /* Data+.swift in Sources */,
+				AB68479D29C34F4500521463 /* MapViewControllerTests.swift in Sources */,
 				AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,14 +540,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ABA2E35829A2700000965558 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABA2E35929A2700000965558 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ABA2E35D29A2700100965558 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -662,7 +678,6 @@
 				INFOPLIST_FILE = JejuAttractionsMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -694,7 +709,6 @@
 				INFOPLIST_FILE = JejuAttractionsMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
