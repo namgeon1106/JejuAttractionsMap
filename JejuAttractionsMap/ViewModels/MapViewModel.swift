@@ -47,12 +47,6 @@ class MapViewModel {
         self.attractions = attractions
     }
     
-    func initializeState() {
-        isSearching = false
-        searchText = ""
-        focusedAttraction = nil
-    }
-    
     func startSearch() {
         isSearching = true
         focusedAttraction = nil
