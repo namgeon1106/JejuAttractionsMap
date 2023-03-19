@@ -25,8 +25,11 @@ class MapViewController: UIViewController {
         viewModel.$attractions
             .receive(on: DispatchQueue.main)
             .sink { attractions in
-                attractions.forEach { [unowned self] attraction in
+                (0..<attractions.count).forEach { [unowned self] index in
+                    let attraction = attractions[index]
                     let marker = NMFMarker()
+                    marker.zIndex = index
+                    marker.isHideCollidedMarkers = true
                     marker.position = NMGLatLng(lat: attraction.latitude, lng: attraction.longitude)
                     marker.mapView = self.mapView
                     
