@@ -28,6 +28,7 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
     let addressImageView = UIImageView.ofSystemImage(systemName: "location.circle", fontSize: 12)
     let addressLabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.text = "주소..."
         label.font = label.font.withSize(12)
         
@@ -37,6 +38,7 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
     let telImageView = UIImageView.ofSystemImage(systemName: "phone.circle", fontSize: 12)
     let telLabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.text = "전화번호..."
         label.font = label.font.withSize(12)
         
@@ -45,6 +47,7 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
     
     let descriptionLabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.text = "관광지 설명..."
         label.font = label.font.withSize(12)
         
@@ -84,10 +87,12 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
             addressImageView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             addressLabel.topAnchor.constraint(equalTo: addressImageView.topAnchor),
             addressLabel.leadingAnchor.constraint(equalTo: addressImageView.trailingAnchor, constant: 3),
+            addressLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -10),
             telImageView.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 12),
             telImageView.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             telLabel.topAnchor.constraint(equalTo: telImageView.topAnchor),
             telLabel.leadingAnchor.constraint(equalTo: telImageView.trailingAnchor, constant: 3),
+            telLabel.trailingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: -10),
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 35),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             imageView.widthAnchor.constraint(equalToConstant: 117),
