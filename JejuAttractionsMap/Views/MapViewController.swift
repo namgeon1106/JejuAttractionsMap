@@ -20,6 +20,8 @@ class MapViewController: UIViewController {
         
         tableView.dataSource = self
         
+        self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 33.360669, lng: 126.532947), zoom: 10)))
+        
         viewModel.$attractions
             .receive(on: DispatchQueue.main)
             .sink { attractions in
