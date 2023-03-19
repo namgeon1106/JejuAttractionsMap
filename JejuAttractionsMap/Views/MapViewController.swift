@@ -27,6 +27,12 @@ class MapViewController: UIViewController {
                     let marker = NMFMarker()
                     marker.position = NMGLatLng(lat: attraction.latitude, lng: attraction.longitude)
                     marker.mapView = self.mapView
+                    
+                    marker.touchHandler = { _ in
+                        self.viewModel.selectAttraction(attraction)
+                        
+                        return true
+                    }
                 }
             }
             .store(in: &subscriptions)
