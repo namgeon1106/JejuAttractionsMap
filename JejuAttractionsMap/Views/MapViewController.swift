@@ -23,6 +23,7 @@ class MapViewController: UIViewController {
         
         self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 33.360669, lng: 126.532947), zoom: 10)))
         
+        // MARK: - Subscriptions
         viewModel.$attractions
             .receive(on: DispatchQueue.main)
             .sink { attractions in
@@ -109,6 +110,7 @@ class MapViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Subviews & layouts
     let searchBar = UISearchBar()
     let searchCancelButton = {
         let button = UIButton()
