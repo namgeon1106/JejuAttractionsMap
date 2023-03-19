@@ -101,6 +101,8 @@ class MapViewController: UIViewController {
                 }
             }
             .store(in: &subscriptions)
+        
+        searchCancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -203,5 +205,13 @@ extension MapViewController: UISearchBarDelegate {
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         return true
+    }
+}
+
+// MARK: - button action
+extension MapViewController {
+    @objc func cancelButtonTapped() {
+        searchBar.endEditing(true)
+        viewModel.cancelSearch()
     }
 }
