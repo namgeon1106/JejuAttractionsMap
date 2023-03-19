@@ -123,7 +123,7 @@ final class MapViewControllerTests: XCTestCase {
         
         let expecation = expectation(description: "Wait for map animation.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertEqual(self.sut.mapView.cameraPosition.zoom, 12)
+            XCTAssertEqual(self.sut.mapView.cameraPosition.zoom, 16)
             XCTAssertLessThanOrEqual(abs(self.sut.mapView.cameraPosition.target.lat - targetAttraction.latitude), 0.01)
             XCTAssertLessThanOrEqual(abs(self.sut.mapView.cameraPosition.target.lng - targetAttraction.longitude), 0.01)
             
