@@ -113,7 +113,7 @@ final class MapViewControllerTests: XCTestCase {
         
         XCTAssertEqual(sut.searchBar.searchTextField.isEditing, false)
         
-        XCTAssertEqual(sut.mapView.cameraPosition.zoom, 22)
+        XCTAssertEqual(sut.mapView.cameraPosition.zoom, 12)
         XCTAssertLessThanOrEqual(abs(sut.mapView.cameraPosition.target.lat - targetAttraction.latitude), 0.001)
         XCTAssertLessThanOrEqual(abs(sut.mapView.cameraPosition.target.lng - targetAttraction.longitude), 0.001)
         
