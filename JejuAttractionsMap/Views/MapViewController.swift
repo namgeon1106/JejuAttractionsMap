@@ -18,6 +18,7 @@ class MapViewController: UIViewController {
         super.init(nibName: nil, bundle: Bundle.main)
         
         tableView.dataSource = self
+        tableView.delegate = self
         searchBar.delegate = self
         
         self.mapView.moveCamera(NMFCameraUpdate(position: NMFCameraPosition(NMGLatLng(lat: 33.360669, lng: 126.532947), zoom: 10)))
@@ -173,6 +174,15 @@ extension MapViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.filteredAttractions.count
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MapViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBar.endEditing(true)
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectAttraction(viewModel.filteredAttractions[indexPath.row])
     }
 }
 
