@@ -117,8 +117,8 @@ final class MapViewControllerTests: XCTestCase {
         
         let sheetController = sut.presentedViewController as? AttractionInfoSheetController
         XCTAssertEqual(sheetController?.nameLabel.text, targetAttraction.name)
-        XCTAssertEqual(sheetController?.addressLabel.text, "􀋕 \(targetAttraction.newAddr ?? "주소 불명")")
-        XCTAssertEqual(sheetController?.telLabel.text, "􀒥 \(targetAttraction.tel)")
+        XCTAssertEqual(sheetController?.addressLabel.text, targetAttraction.newAddr ?? "주소 불명")
+        XCTAssertEqual(sheetController?.telLabel.text, targetAttraction.tel)
         XCTAssertEqual(sheetController?.descriptionLabel.text, targetAttraction.intro)
         
         let expecation = expectation(description: "Wait for map animation.")
