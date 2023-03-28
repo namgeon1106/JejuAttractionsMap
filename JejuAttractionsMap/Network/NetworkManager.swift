@@ -10,23 +10,13 @@ import XMLCoder
 
 class NetworkManager {
     private let session: URLSessionProtocol
-    private let attractionsCount = 1047
-    private let serviceKey = "P6%2BlyELthAZGU%2BPOAS5mE3%2BqJX78QgOALbnBIdeZZOYnNjpa5TcB7OyWIODvx7dN1VZkMsDvEX554ddUBuYqhg%3D%3D"
-    
-    private var attractionsURLString: String {
-        "https://apis.data.go.kr/6500000/jjtb/locinfo?serviceKey=\(serviceKey)&pageNo=1&numOfRows=\(attractionsCount)"
-    }
-    
-    private var fetchImageInfoURLString: String {
-        "https://apis.data.go.kr/6500000/jjtb/image?serviceKey=\(serviceKey)&pageNo=1&numOfRows=1&name="
-    }
     
     init(session: URLSessionProtocol = URLSession.shared) {
         self.session = session
     }
     
     func fetchAllAttractions() async throws -> [Attraction] {
-        let url = URL(string: attractionsURLString)!
+        let url = URL(string: API.attractionsURLString)!
         let (data, _) = try await session.data(for: URLRequest(url: url))
         
         if let attractionsResponse = try? JSONDecoder().decode(AttractionsResponse.self, from: data) {
@@ -51,7 +41,7 @@ class NetworkManager {
     
     func fetchImageURLString(for name: String) async throws -> String {
         let encodeName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let encodedURLString = fetchImageInfoURLString + encodeName
+        let encodedURLString = API.fetchImageInfoURLString + encodeName
         let url = URL(string: encodedURLString)!
         
         let (data, _) = try await session.data(for: URLRequest(url: url))
