@@ -47,7 +47,16 @@ class NetworkManager {
             return imageUrlStringResponse.items[0].thumbnail
         }
         
-        return ""
+        guard let errorResponse = try? JSONDecoder().decode(ImageApiErrorResponse.self, from: data) else {
+            throw ImageApiError.unknown
+        }
+        
+        switch errorResponse.errorCode {
+        case "SE01":
+            throw ImageApiError.incorrectQuery
+        default:
+            throw ImageApiError.unknown
+        }
     }
     
     func fetchImage(from urlString: String) async throws -> UIImage {

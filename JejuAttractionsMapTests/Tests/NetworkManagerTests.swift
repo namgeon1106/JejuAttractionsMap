@@ -36,7 +36,7 @@ final class NetworkManagerTests: XCTestCase {
         
         Task {
             do {
-                let _ = try await sut.fetchAllAttractions()
+                let _ = try await sut.fetchImageURLString(for: "")
                 XCTFail("Error must be thrown.")
             } catch {
                 XCTAssertTrue(error is ImageApiError)
