@@ -59,7 +59,7 @@ final class NetworkManagerIntegrationTests: XCTestCase {
                 
                 XCTFail()
             } catch {
-                XCTAssertEqual(error as? NetworkError, NetworkError.noImage)
+                XCTAssertEqual(error as? AttractionsApiError, AttractionsApiError.noImage)
             }
             
             expectation.fulfill()

@@ -24,18 +24,18 @@ class NetworkManager {
         }
         
         guard let errorResponse = try? XMLDecoder().decode(OpenAPI_ServiceResponse.self, from: data) else {
-            throw NetworkError.unknown
+            throw AttractionsApiError.unknown
         }
         
         switch errorResponse.cmmMsgHeader.returnReasonCode {
         case 12, 31:
-            throw NetworkError.serviceExpired
+            throw AttractionsApiError.serviceExpired
         case 20:
-            throw NetworkError.serviceAccessDenied
+            throw AttractionsApiError.serviceAccessDenied
         case 22:
-            throw NetworkError.requestExceeded
+            throw AttractionsApiError.requestExceeded
         default:
-            throw NetworkError.unknown
+            throw AttractionsApiError.unknown
         }
     }
     
@@ -48,7 +48,7 @@ class NetworkManager {
         let (data, _) = try await session.data(for: URLRequest(url: url))
         
         guard let image = UIImage(data: data) else {
-            throw NetworkError.noImage
+            throw AttractionsApiError.noImage
         }
         
         return image

@@ -13,7 +13,7 @@ final class NetworkManagerTests: XCTestCase {
     var sut: NetworkManager!
     
     // MARK: - 에러 throw check 함수
-    func checkIfFetchAllAttractionsThrows(error expectedError: NetworkError) {
+    func checkIfFetchAllAttractionsThrows(error expectedError: AttractionsApiError) {
         let expectation = expectation(description: "Task must be executed.")
         
         Task {
@@ -21,26 +21,8 @@ final class NetworkManagerTests: XCTestCase {
                 let _ = try await sut.fetchAllAttractions()
                 XCTFail("Error must be thrown.")
             } catch {
-                XCTAssertTrue(error is NetworkError)
-                XCTAssertEqual(error as? NetworkError, expectedError)
-            }
-            
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1)
-    }
-    
-    func checkIfFetchImageURLStringThrows(error expectedError: NetworkError) {
-        let expectation = expectation(description: "Task must be executed.")
-        
-        Task {
-            do {
-                let _ = try await sut.fetchImageURLString(for: "")
-                XCTFail("Error must be thrown.")
-            } catch {
-                XCTAssertTrue(error is NetworkError)
-                XCTAssertEqual(error as? NetworkError, expectedError)
+                XCTAssertTrue(error is AttractionsApiError)
+                XCTAssertEqual(error as? AttractionsApiError, expectedError)
             }
             
             expectation.fulfill()

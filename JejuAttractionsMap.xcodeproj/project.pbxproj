@@ -14,7 +14,7 @@
 		AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */; };
 		AB3788D429B7120200C33270 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D329B7120200C33270 /* MockURLSession.swift */; };
 		AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D529B7257C00C33270 /* NetworkManager.swift */; };
-		AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D729B72EB600C33270 /* NetworkError.swift */; };
+		AB3788D829B72EB600C33270 /* AttractionsApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D729B72EB600C33270 /* AttractionsApiError.swift */; };
 		AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3788DB29B77B5C00C33270 /* NotXML.json */; };
 		AB4069AB29C6ED100061B544 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4069AA29C6ED100061B544 /* UIImageView+.swift */; };
 		AB49BB4629D3326A00606C46 /* AttracitonsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49BB4529D3326A00606C46 /* AttracitonsApi.swift */; };
@@ -64,7 +64,7 @@
 		AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		AB3788D329B7120200C33270 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		AB3788D529B7257C00C33270 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		AB3788D729B72EB600C33270 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		AB3788D729B72EB600C33270 /* AttractionsApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsApiError.swift; sourceTree = "<group>"; };
 		AB3788DB29B77B5C00C33270 /* NotXML.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotXML.json; sourceTree = "<group>"; };
 		AB4069AA29C6ED100061B544 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		AB49BB4529D3326A00606C46 /* AttracitonsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttracitonsApi.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 				AB3788D129B7118B00C33270 /* Responses */,
 				AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */,
 				AB3788D529B7257C00C33270 /* NetworkManager.swift */,
-				AB3788D729B72EB600C33270 /* NetworkError.swift */,
+				AB3788D729B72EB600C33270 /* AttractionsApiError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -543,7 +543,7 @@
 				ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */,
 				AB28427829C57A6F0042F37C /* AttractionInfoSheetController.swift in Sources */,
 				AB519BB729F1415500A23F72 /* ImageApi.swift in Sources */,
-				AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */,
+				AB3788D829B72EB600C33270 /* AttractionsApiError.swift in Sources */,
 				ABA766AF29B63FC200693C10 /* AttractionsResponse.swift in Sources */,
 				ABA766B129B63FF300693C10 /* OpenAPI_ServiceResponse.swift in Sources */,
 			);
