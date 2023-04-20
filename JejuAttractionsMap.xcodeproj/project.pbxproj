@@ -25,6 +25,7 @@
 		AB519BBF29F1589C00A23F72 /* ImageApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519BBE29F1589C00A23F72 /* ImageApiError.swift */; };
 		AB519BC129F15A6F00A23F72 /* ImageUrlStringResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AB519BC029F15A6F00A23F72 /* ImageUrlStringResponse.json */; };
 		AB519BC529F15E5000A23F72 /* ImageApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519BC429F15E5000A23F72 /* ImageApiErrorResponse.swift */; };
+		AB519BC729F163A900A23F72 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB519BC629F163A900A23F72 /* 가릿당_관광지안내_001-1.jpg */; };
 		AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */; };
 		AB68479829C346D600521463 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479729C346D600521463 /* MapViewModel.swift */; };
 		AB68479D29C34F4500521463 /* MapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479C29C34F4500521463 /* MapViewControllerTests.swift */; };
@@ -77,6 +78,7 @@
 		AB519BBE29F1589C00A23F72 /* ImageApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageApiError.swift; sourceTree = "<group>"; };
 		AB519BC029F15A6F00A23F72 /* ImageUrlStringResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImageUrlStringResponse.json; sourceTree = "<group>"; };
 		AB519BC429F15E5000A23F72 /* ImageApiErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageApiErrorResponse.swift; sourceTree = "<group>"; };
+		AB519BC629F163A900A23F72 /* 가릿당_관광지안내_001-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "가릿당_관광지안내_001-1.jpg"; sourceTree = "<group>"; };
 		AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
 		AB68479729C346D600521463 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		AB68479C29C34F4500521463 /* MapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerTests.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		AB68479029C2D13F00521463 /* FetchImage */ = {
 			isa = PBXGroup;
 			children = (
+				AB519BC629F163A900A23F72 /* 가릿당_관광지안내_001-1.jpg */,
 			);
 			path = FetchImage;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				ABA7669F29B6358600693C10 /* RequestExceededError.xml in Resources */,
 				ABA7669929B6343000693C10 /* AttractionsData.json in Resources */,
 				ABA766A529B6360300693C10 /* UnknownError.xml in Resources */,
+				AB519BC729F163A900A23F72 /* 가릿당_관광지안내_001-1.jpg in Resources */,
 				AB519BBB29F1548500A23F72 /* MalformedEncoding.json in Resources */,
 				ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */,
 				AB519BB929F1543C00A23F72 /* IncorrectQuery.json in Resources */,
