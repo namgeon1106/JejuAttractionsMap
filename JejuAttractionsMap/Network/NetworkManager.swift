@@ -40,6 +40,13 @@ class NetworkManager {
     }
     
     func fetchImageURLString(for name: String) async throws -> String {
+        let request = ImageApi.urlRequest(from: name)
+        let (data, _) = try await session.data(for: request)
+        
+        if let imageUrlStringResponse = try? JSONDecoder().decode(ImageURLStringResponse.self, from: data) {
+            return imageUrlStringResponse.items[0].thumbnail
+        }
+        
         return ""
     }
     
