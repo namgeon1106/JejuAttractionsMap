@@ -8,9 +8,9 @@
 import Foundation
 
 struct ImageURLStringResponse: Decodable {
-    let data: [ImageURLResult]
+    let items: [Item]
     
-    struct ImageURLResult: Decodable {
-        let imageUrl: String
+    struct Item: Decodable {
+        let thumbnail: String
     }
 }
