@@ -19,7 +19,7 @@
 		AB3788D829B72EB600C33270 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788D729B72EB600C33270 /* NetworkError.swift */; };
 		AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */ = {isa = PBXBuildFile; fileRef = AB3788DB29B77B5C00C33270 /* NotXML.json */; };
 		AB4069AB29C6ED100061B544 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4069AA29C6ED100061B544 /* UIImageView+.swift */; };
-		AB49BB4629D3326A00606C46 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49BB4529D3326A00606C46 /* API.swift */; };
+		AB49BB4629D3326A00606C46 /* AttracitonsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49BB4529D3326A00606C46 /* AttracitonsApi.swift */; };
 		AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */; };
 		AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */; };
 		AB68479829C346D600521463 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479729C346D600521463 /* MapViewModel.swift */; };
@@ -67,7 +67,7 @@
 		AB3788D729B72EB600C33270 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		AB3788DB29B77B5C00C33270 /* NotXML.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotXML.json; sourceTree = "<group>"; };
 		AB4069AA29C6ED100061B544 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
-		AB49BB4529D3326A00606C46 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AB49BB4529D3326A00606C46 /* AttracitonsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttracitonsApi.swift; sourceTree = "<group>"; };
 		AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
 		AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "가릿당_관광지안내_001-1.jpg"; path = "../../../../../가릿당_관광지안내_001-1.jpg"; sourceTree = "<group>"; };
 		AB68479729C346D600521463 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -181,6 +181,14 @@
 				AB4069AA29C6ED100061B544 /* UIImageView+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AB519BB529F140B700A23F72 /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				AB49BB4529D3326A00606C46 /* AttracitonsApi.swift */,
+			);
+			path = Secret;
 			sourceTree = "<group>";
 		};
 		AB64203F29C1CD1D009136FB /* Tests */ = {
@@ -301,11 +309,11 @@
 		ABA766AD29B63FAC00693C10 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AB519BB529F140B700A23F72 /* Secret */,
 				AB3788D129B7118B00C33270 /* Responses */,
 				AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */,
 				AB3788D529B7257C00C33270 /* NetworkManager.swift */,
 				AB3788D729B72EB600C33270 /* NetworkError.swift */,
-				AB49BB4529D3326A00606C46 /* API.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -522,7 +530,7 @@
 				ABA766AC29B63CCE00693C10 /* Attraction.swift in Sources */,
 				ABA2E35729A2700000965558 /* MapViewController.swift in Sources */,
 				ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */,
-				AB49BB4629D3326A00606C46 /* API.swift in Sources */,
+				AB49BB4629D3326A00606C46 /* AttracitonsApi.swift in Sources */,
 				AB3788D629B7257C00C33270 /* NetworkManager.swift in Sources */,
 				AB68479829C346D600521463 /* MapViewModel.swift in Sources */,
 				ABA2E35529A2700000965558 /* SceneDelegate.swift in Sources */,

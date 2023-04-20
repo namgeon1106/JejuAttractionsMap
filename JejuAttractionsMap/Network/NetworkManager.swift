@@ -16,7 +16,7 @@ class NetworkManager {
     }
     
     func fetchAllAttractions() async throws -> [Attraction] {
-        let url = URL(string: API.attractionsURLString)!
+        let url = URL(string: AttracitonsApi.attractionsURLString)!
         let (data, _) = try await session.data(for: URLRequest(url: url))
         
         if let attractionsResponse = try? JSONDecoder().decode(AttractionsResponse.self, from: data) {
