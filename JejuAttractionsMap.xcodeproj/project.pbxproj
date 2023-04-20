@@ -191,6 +191,7 @@
 		AB519BB529F140B700A23F72 /* Secret */ = {
 			isa = PBXGroup;
 			children = (
+				AB3788D729B72EB600C33270 /* AttractionsApiError.swift */,
 				AB49BB4529D3326A00606C46 /* AttracitonsApi.swift */,
 				AB519BB629F1415500A23F72 /* ImageApi.swift */,
 			);
@@ -319,7 +320,6 @@
 				AB3788D129B7118B00C33270 /* Responses */,
 				AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */,
 				AB3788D529B7257C00C33270 /* NetworkManager.swift */,
-				AB3788D729B72EB600C33270 /* AttractionsApiError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
