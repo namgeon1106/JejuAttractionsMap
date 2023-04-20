@@ -54,6 +54,8 @@ class NetworkManager {
         switch errorResponse.errorCode {
         case "SE01":
             throw ImageApiError.incorrectQuery
+        case "SE06":
+            throw ImageApiError.malformedEncoding
         default:
             throw ImageApiError.unknown
         }

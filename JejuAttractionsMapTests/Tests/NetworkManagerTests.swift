@@ -119,4 +119,9 @@ final class NetworkManagerTests: XCTestCase {
         sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "IncorrectQuery", format: "json"))
         checkIfFetchImageUrlStringThrows(error: .incorrectQuery)
     }
+    
+    func testFetchImageUrlString_whenResponseIsSE06_throwsMalformedEncoding() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "MalformedEncoding", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .malformedEncoding)
+    }
 }
