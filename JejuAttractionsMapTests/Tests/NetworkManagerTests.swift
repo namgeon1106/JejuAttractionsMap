@@ -13,7 +13,7 @@ final class NetworkManagerTests: XCTestCase {
     var sut: NetworkManager!
     
     // MARK: - 에러 throw check 함수
-    func checkIfFetchAllAttractionsThrows(error expectedError: NetworkError) {
+    func checkIfFetchAllAttractionsThrows(error expectedError: AttractionsApiError) {
         let expectation = expectation(description: "Task must be executed.")
         
         Task {
@@ -21,8 +21,8 @@ final class NetworkManagerTests: XCTestCase {
                 let _ = try await sut.fetchAllAttractions()
                 XCTFail("Error must be thrown.")
             } catch {
-                XCTAssertTrue(error is NetworkError)
-                XCTAssertEqual(error as? NetworkError, expectedError)
+                XCTAssertTrue(error is AttractionsApiError)
+                XCTAssertEqual(error as? AttractionsApiError, expectedError)
             }
             
             expectation.fulfill()
@@ -31,7 +31,7 @@ final class NetworkManagerTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func checkIfFetchImageURLStringThrows(error expectedError: NetworkError) {
+    func checkIfFetchImageUrlStringThrows(error expectedError: ImageApiError) {
         let expectation = expectation(description: "Task must be executed.")
         
         Task {
@@ -39,8 +39,8 @@ final class NetworkManagerTests: XCTestCase {
                 let _ = try await sut.fetchImageURLString(for: "")
                 XCTFail("Error must be thrown.")
             } catch {
-                XCTAssertTrue(error is NetworkError)
-                XCTAssertEqual(error as? NetworkError, expectedError)
+                XCTAssertTrue(error is ImageApiError)
+                XCTAssertEqual(error as? ImageApiError, expectedError)
             }
             
             expectation.fulfill()
@@ -98,16 +98,15 @@ final class NetworkManagerTests: XCTestCase {
     }
     
     // MARK: - fetchImageURLString(for:)에 대한 테스트
-    func testFetchImageURLString_WhenResponseIsGood_ReturnsImageURLString() throws {
-        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "ImageURLStringData", format: "json"))
+    func testFetchImageUrlString_whenResponseIsGood_returnsImageUrlString() throws {
+        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "ImageUrlStringResponse", format: "json"))
         let expectation = expectation(description: "Task must be executed.")
         
-        let dataFromFile = try Data.fromFile(fileName: "ImageURLStringData", format: "json")
-        let unencodedUrl = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).data.first?.imageUrl
-        let expectedResult = unencodedUrl!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let dataFromFile = try Data.fromFile(fileName: "ImageUrlStringResponse", format: "json")
+        let expectedResult = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).items[0].thumbnail
         
         Task {
-            let result = try await sut.fetchImageURLString(for: "1112도로")
+            let result = try await sut.fetchImageURLString(for: "성산일출봉")
             XCTAssertEqual(result, expectedResult)
             
             expectation.fulfill()
@@ -116,38 +115,28 @@ final class NetworkManagerTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testFetchImageURLString_WhenResponseHasNoImageData_ThrowsNoImage() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "NoImageURLData", format: "json"))
-        checkIfFetchImageURLStringThrows(error: .noImage)
+    func testFetchImageUrlString_whenResponseIsSE01_throwsIncorrectQuery() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "IncorrectQuery", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .incorrectQuery)
     }
     
-    func testFetchImageURLString_WhenResponseIsNoServiceError_ThrowsServiceExpired() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoServiceError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .serviceExpired)
+    func testFetchImageUrlString_whenResponseIsSE06_throwsMalformedEncoding() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "MalformedEncoding", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .malformedEncoding)
     }
     
-    func testFetchImageURLString_WhenResponseIsServiceAccessDeniedError_ThrowsServiceAccessDenied() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "ServiceAccessDeniedError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .serviceAccessDenied)
+    func testFetchImageUrlString_whenResponseIsSE99_throwsServerError() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 500, fileName: "SystemError", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .serverError)
     }
     
-    func testFetchImageURLString_WhenResponseIsRequestExceededError_ThrowsRequestExceeded() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "RequestExceededError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .requestExceeded)
+    func testFetchImageUrlString_whenErrorResponseNotParsed_throwsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NotParsed", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .unknown)
     }
     
-    func testFetchImageURLString_WhenResponseIsDeadlineExpiredError_ThrowsServiceExpired() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "DeadlineExpiredError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .serviceExpired)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsUnknownError_ThrowsUnknown() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "UnknownError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .unknown)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsNotXML_ThrowsUnknown() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NotXML", format: "json"))
-        checkIfFetchImageURLStringThrows(error: .unknown)
+    func testFetchImageUrlString_whenErrorResponseIsEtc_throwsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "EtcError", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .unknown)
     }
 }

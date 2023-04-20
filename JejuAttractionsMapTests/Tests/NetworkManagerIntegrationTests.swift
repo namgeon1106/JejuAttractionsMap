@@ -59,7 +59,7 @@ final class NetworkManagerIntegrationTests: XCTestCase {
                 
                 XCTFail()
             } catch {
-                XCTAssertEqual(error as? NetworkError, NetworkError.noImage)
+                XCTAssertEqual(error as? AttractionsApiError, AttractionsApiError.noImage)
             }
             
             expectation.fulfill()
@@ -68,20 +68,17 @@ final class NetworkManagerIntegrationTests: XCTestCase {
         wait(for: [expectation], timeout: 3)
     }
     
-    func testFetchImageURLString_whenValidNameUsed_returnsURLString() {
-        let expectedURLString = "http://api.brandcontents.or.kr/jejuImage/%EA%B0%80%EB%A6%BF%EB%8B%B9_%EA%B4%80%EA%B4%91%EC%A7%80%EC%95%88%EB%82%B4_001-1.jpg"
-        
+    func testFetchImageUrlString() {
         let expectation = expectation(description: "Task must be executed.")
         
         Task {
             do {
-                let urlString = try await sut.fetchImageURLString(for: "가릿당")
-                XCTAssertEqual(urlString, expectedURLString)
+                let result = try await sut.fetchImageURLString(for: "성산일출봉")
+                XCTAssertEqual(result, "https://search.pstatic.net/sunny/?type=b150&src=https://resource.tranggle.com/board_v3/story/2022/20220531/231404_3a11dd9c98ea1f6288b3d1700430626dda41293d_960x.jpg")
             } catch {
-                print(error)
+                print("error: \(error)")
                 XCTFail()
             }
-            
             expectation.fulfill()
         }
         

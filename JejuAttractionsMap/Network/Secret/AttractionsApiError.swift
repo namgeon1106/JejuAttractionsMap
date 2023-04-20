@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum AttractionsApiError: Error {
     case serviceExpired, serviceAccessDenied, requestExceeded, unknown, noImage
 }
