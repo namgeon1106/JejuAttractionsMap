@@ -80,5 +80,20 @@ final class NetworkManagerTests: XCTestCase {
     }
     
     // MARK: - fetchImageURLString(for:)에 대한 테스트
-    
+    func testFetchImageUrlString_whenResponseIsGood_returnsImageUrlString() throws {
+        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "ImageUrlStringResponse", format: "json"))
+        let expectation = expectation(description: "Task must be executed.")
+        
+        let dataFromFile = try Data.fromFile(fileName: "ImageUrlStringResponse", format: "json")
+        let expectedResult = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).items[0].thumbnail
+        
+        Task {
+            let result = try await sut.fetchImageURLString(for: "성산일출봉")
+            XCTAssertEqual(result, expectedResult)
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
 }

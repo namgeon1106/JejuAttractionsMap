@@ -25,7 +25,6 @@
 		AB519BBF29F1589C00A23F72 /* ImageApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB519BBE29F1589C00A23F72 /* ImageApiError.swift */; };
 		AB519BC129F15A6F00A23F72 /* ImageUrlStringResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = AB519BC029F15A6F00A23F72 /* ImageUrlStringResponse.json */; };
 		AB64204329C1CD56009136FB /* NetworkManagerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */; };
-		AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */; };
 		AB68479829C346D600521463 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479729C346D600521463 /* MapViewModel.swift */; };
 		AB68479D29C34F4500521463 /* MapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68479C29C34F4500521463 /* MapViewControllerTests.swift */; };
 		ABA2E35329A2700000965558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA2E35229A2700000965558 /* AppDelegate.swift */; };
@@ -77,7 +76,6 @@
 		AB519BBE29F1589C00A23F72 /* ImageApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageApiError.swift; sourceTree = "<group>"; };
 		AB519BC029F15A6F00A23F72 /* ImageUrlStringResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ImageUrlStringResponse.json; sourceTree = "<group>"; };
 		AB64204229C1CD56009136FB /* NetworkManagerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerIntegrationTests.swift; sourceTree = "<group>"; };
-		AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "가릿당_관광지안내_001-1.jpg"; path = "../../../../../가릿당_관광지안내_001-1.jpg"; sourceTree = "<group>"; };
 		AB68479729C346D600521463 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		AB68479C29C34F4500521463 /* MapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerTests.swift; sourceTree = "<group>"; };
 		ABA2E34F29A2700000965558 /* JejuAttractionsMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuAttractionsMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,7 +215,6 @@
 		AB68479029C2D13F00521463 /* FetchImage */ = {
 			isa = PBXGroup;
 			children = (
-				AB68479129C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg */,
 			);
 			path = FetchImage;
 			sourceTree = "<group>";
@@ -444,7 +441,6 @@
 				AB519BB929F1543C00A23F72 /* IncorrectQuery.json in Resources */,
 				AB519BC129F15A6F00A23F72 /* ImageUrlStringResponse.json in Resources */,
 				AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */,
-				AB68479229C2D1A000521463 /* 가릿당_관광지안내_001-1.jpg in Resources */,
 				AB519BBD29F154D800A23F72 /* SystemError.json in Resources */,
 				ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */,
 			);
