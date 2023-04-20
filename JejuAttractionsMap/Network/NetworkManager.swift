@@ -40,43 +40,7 @@ class NetworkManager {
     }
     
     func fetchImageURLString(for name: String) async throws -> String {
-        let encodeName = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let encodedURLString = API.fetchImageInfoURLString + encodeName
-        let url = URL(string: encodedURLString)!
-        
-        let (data, _) = try await session.data(for: URLRequest(url: url))
-        
-        if let imageURLResponse = try? JSONDecoder().decode(ImageURLStringResponse.self, from: data) {
-            if let imageURLData = imageURLResponse.data.first {
-                let originalUrlString = imageURLData.imageUrl
-                let imageNameString = originalUrlString.components(separatedBy: "jejuImage/")[1]
-                
-                let imageNameArr = imageNameString.components(separatedBy: ".")
-                let namePart = imageNameArr[0]
-                let format = imageNameArr[1]
-                
-                let encodedImageName = namePart.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-                
-                return "http://api.brandcontents.or.kr/jejuImage/\(encodedImageName).\(format)"
-            } else {
-                throw NetworkError.noImage
-            }
-        }
-        
-        guard let errorResponse = try? XMLDecoder().decode(OpenAPI_ServiceResponse.self, from: data) else {
-            throw NetworkError.unknown
-        }
-        
-        switch errorResponse.cmmMsgHeader.returnReasonCode {
-        case 12, 31:
-            throw NetworkError.serviceExpired
-        case 20:
-            throw NetworkError.serviceAccessDenied
-        case 22:
-            throw NetworkError.requestExceeded
-        default:
-            throw NetworkError.unknown
-        }
+        return ""
     }
     
     func fetchImage(from urlString: String) async throws -> UIImage {

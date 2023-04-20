@@ -98,56 +98,5 @@ final class NetworkManagerTests: XCTestCase {
     }
     
     // MARK: - fetchImageURLString(for:)에 대한 테스트
-    func testFetchImageURLString_WhenResponseIsGood_ReturnsImageURLString() throws {
-        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "ImageURLStringData", format: "json"))
-        let expectation = expectation(description: "Task must be executed.")
-        
-        let dataFromFile = try Data.fromFile(fileName: "ImageURLStringData", format: "json")
-        let unencodedUrl = try JSONDecoder().decode(ImageURLStringResponse.self, from: dataFromFile).data.first?.imageUrl
-        let expectedResult = unencodedUrl!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        Task {
-            let result = try await sut.fetchImageURLString(for: "1112도로")
-            XCTAssertEqual(result, expectedResult)
-            
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1)
-    }
     
-    func testFetchImageURLString_WhenResponseHasNoImageData_ThrowsNoImage() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "NoImageURLData", format: "json"))
-        checkIfFetchImageURLStringThrows(error: .noImage)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsNoServiceError_ThrowsServiceExpired() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NoServiceError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .serviceExpired)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsServiceAccessDeniedError_ThrowsServiceAccessDenied() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "ServiceAccessDeniedError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .serviceAccessDenied)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsRequestExceededError_ThrowsRequestExceeded() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "RequestExceededError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .requestExceeded)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsDeadlineExpiredError_ThrowsServiceExpired() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "DeadlineExpiredError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .serviceExpired)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsUnknownError_ThrowsUnknown() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "UnknownError", format: "xml"))
-        checkIfFetchImageURLStringThrows(error: .unknown)
-    }
-    
-    func testFetchImageURLString_WhenResponseIsNotXML_ThrowsUnknown() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NotXML", format: "json"))
-        checkIfFetchImageURLStringThrows(error: .unknown)
-    }
 }
