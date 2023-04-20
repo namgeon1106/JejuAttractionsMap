@@ -126,7 +126,17 @@ final class NetworkManagerTests: XCTestCase {
     }
     
     func testFetchImageUrlString_whenResponseIsSE99_throwsServerError() {
-        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "SystemError", format: "json"))
+        sut = NetworkManager(session: MockURLSession(statusCode: 500, fileName: "SystemError", format: "json"))
         checkIfFetchImageUrlStringThrows(error: .serverError)
+    }
+    
+    func testFetchImageUrlString_whenErrorResponseNotParsed_throwsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "NotParsed", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .unknown)
+    }
+    
+    func testFetchImageUrlString_whenErrorResponseIsEtc_throwsUnknown() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "EtcError", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .unknown)
     }
 }

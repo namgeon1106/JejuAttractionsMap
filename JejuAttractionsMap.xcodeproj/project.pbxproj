@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		21565CF696659F6307739E3E /* Pods_JejuAttractionsMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */; };
 		58C38CEEFBD4705128F95DA1 /* Pods_JejuAttractionsMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54356F1A8352401C9057975 /* Pods_JejuAttractionsMapTests.framework */; };
+		AB01493729F1681D008F3923 /* NotParsed.json in Resources */ = {isa = PBXBuildFile; fileRef = AB01493629F1681D008F3923 /* NotParsed.json */; };
+		AB01493929F16870008F3923 /* EtcError.json in Resources */ = {isa = PBXBuildFile; fileRef = AB01493829F16870008F3923 /* EtcError.json */; };
 		AB046B4229B9BFBA0081E83F /* ImageURLStringResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */; };
 		AB28427829C57A6F0042F37C /* AttractionInfoSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB28427729C57A6F0042F37C /* AttractionInfoSheetController.swift */; };
 		AB3788D029B7114C00C33270 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */; };
@@ -62,6 +64,8 @@
 		180C67198E1DA532763F9C75 /* Pods-JejuAttractionsMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.release.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.release.xcconfig"; sourceTree = "<group>"; };
 		5D26206F5FC3641A02FE4D43 /* Pods_JejuAttractionsMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuAttractionsMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C2D75FD42F2E239544975F /* Pods-JejuAttractionsMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuAttractionsMap.debug.xcconfig"; path = "Target Support Files/Pods-JejuAttractionsMap/Pods-JejuAttractionsMap.debug.xcconfig"; sourceTree = "<group>"; };
+		AB01493629F1681D008F3923 /* NotParsed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NotParsed.json; sourceTree = "<group>"; };
+		AB01493829F16870008F3923 /* EtcError.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EtcError.json; sourceTree = "<group>"; };
 		AB046B4129B9BFBA0081E83F /* ImageURLStringResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLStringResponse.swift; sourceTree = "<group>"; };
 		AB28427729C57A6F0042F37C /* AttractionInfoSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInfoSheetController.swift; sourceTree = "<group>"; };
 		AB3788CF29B7114C00C33270 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				AB519BB829F1543C00A23F72 /* IncorrectQuery.json */,
 				AB519BBA29F1548500A23F72 /* MalformedEncoding.json */,
 				AB519BBC29F154D800A23F72 /* SystemError.json */,
+				AB01493629F1681D008F3923 /* NotParsed.json */,
+				AB01493829F16870008F3923 /* EtcError.json */,
 			);
 			path = FetchImageURLString;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				ABA7669929B6343000693C10 /* AttractionsData.json in Resources */,
 				ABA766A529B6360300693C10 /* UnknownError.xml in Resources */,
 				AB519BC729F163A900A23F72 /* 가릿당_관광지안내_001-1.jpg in Resources */,
+				AB01493729F1681D008F3923 /* NotParsed.json in Resources */,
 				AB519BBB29F1548500A23F72 /* MalformedEncoding.json in Resources */,
 				ABA7669B29B634EE00693C10 /* NoServiceError.xml in Resources */,
 				AB519BB929F1543C00A23F72 /* IncorrectQuery.json in Resources */,
@@ -450,6 +457,7 @@
 				AB3788DC29B77B5C00C33270 /* NotXML.json in Resources */,
 				AB519BBD29F154D800A23F72 /* SystemError.json in Resources */,
 				ABA766A329B635D900693C10 /* DeadlineExpiredError.xml in Resources */,
+				AB01493929F16870008F3923 /* EtcError.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
