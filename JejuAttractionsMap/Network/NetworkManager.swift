@@ -56,6 +56,8 @@ class NetworkManager {
             throw ImageApiError.incorrectQuery
         case "SE06":
             throw ImageApiError.malformedEncoding
+        case "SE99":
+            throw ImageApiError.serverError
         default:
             throw ImageApiError.unknown
         }

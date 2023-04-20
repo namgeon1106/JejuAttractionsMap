@@ -124,4 +124,9 @@ final class NetworkManagerTests: XCTestCase {
         sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "MalformedEncoding", format: "json"))
         checkIfFetchImageUrlStringThrows(error: .malformedEncoding)
     }
+    
+    func testFetchImageUrlString_whenResponseIsSE99_throwsServerError() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "SystemError", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .serverError)
+    }
 }
