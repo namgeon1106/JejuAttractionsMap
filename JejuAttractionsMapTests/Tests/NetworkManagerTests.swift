@@ -31,6 +31,24 @@ final class NetworkManagerTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
+    func checkIfFetchImageUrlStringThrows(error expectedError: ImageApiError) {
+        let expectation = expectation(description: "Task must be executed.")
+        
+        Task {
+            do {
+                let _ = try await sut.fetchAllAttractions()
+                XCTFail("Error must be thrown.")
+            } catch {
+                XCTAssertTrue(error is ImageApiError)
+                XCTAssertEqual(error as? ImageApiError, expectedError)
+            }
+            
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 1)
+    }
+    
     // MARK: - fetchAllAttractions()에 대한 테스트
     func testFetchAllAttractions_WhenResponseIsGood_ReturnsAttractions() throws {
         sut = NetworkManager(session: MockURLSession(statusCode: 200, fileName: "AttractionsData", format: "json"))
@@ -95,5 +113,10 @@ final class NetworkManagerTests: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 1)
+    }
+    
+    func testFetchImageUrlString_whenResponseIsSE01_throwsIncorrectQuery() {
+        sut = NetworkManager(session: MockURLSession(statusCode: 400, fileName: "IncorrectQuery", format: "json"))
+        checkIfFetchImageUrlStringThrows(error: .incorrectQuery)
     }
 }
