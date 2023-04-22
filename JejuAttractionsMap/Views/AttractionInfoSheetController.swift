@@ -14,6 +14,14 @@ class AttractionInfoSheetController: UIViewController, UISheetPresentationContro
             addressLabel.text = attraction.newAddr ?? "주소 불명"
             telLabel.text = attraction.tel
             descriptionLabel.text = attraction.intro
+            
+            Task {
+                do {
+                    imageView.image = try await ImageFetcher().fetchImage(for: attraction.name)
+                } catch {
+                    imageView.image = UIImage(systemName: "x.circle")
+                }
+            }
         }
     }
     
