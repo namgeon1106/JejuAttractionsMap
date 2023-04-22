@@ -8,6 +8,17 @@
 import UIKit
 
 class AttractionInfoSheetController: UIViewController, UISheetPresentationControllerDelegate {
+    let session: URLSessionProtocol
+    
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+        super.init(nibName: nil, bundle: Bundle.main)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var attraction: Attraction! {
         didSet {
             nameLabel.text = attraction.name
