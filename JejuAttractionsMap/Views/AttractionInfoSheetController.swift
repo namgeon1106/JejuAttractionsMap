@@ -8,23 +8,20 @@
 import UIKit
 
 class AttractionInfoSheetController: UIViewController, UISheetPresentationControllerDelegate {
-    let session: URLSessionProtocol
-    
-    init(session: URLSessionProtocol = URLSession.shared) {
-        self.session = session
-        super.init(nibName: nil, bundle: Bundle.main)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     var attraction: Attraction! {
         didSet {
             nameLabel.text = attraction.name
             addressLabel.text = attraction.newAddr ?? "주소 불명"
             telLabel.text = attraction.tel
             descriptionLabel.text = attraction.intro
+            
+            Task {
+                do {
+                    imageView.image = try await ImageFetcher().fetchImage(for: attraction.name)
+                } catch {
+                    imageView.image = UIImage(systemName: "x.circle")
+                }
+            }
         }
     }
     
